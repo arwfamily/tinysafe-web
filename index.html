@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TinySafe — Baby product recalls, in one place</title>
+<meta name="description" content="TinySafe brings baby product recalls from the FDA and CPSC into one place, curated for the 0–4 age range. Add your brands and see the recalls that match them.">
+
+<!-- Open Graph / social + LLM-friendly metadata -->
+<meta property="og:title" content="TinySafe — Baby product recalls, in one place">
+<meta property="og:description" content="An independent app that brings baby product recalls from the FDA and CPSC into one place, curated for babies and toddlers.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tinysafe.app/">
+
+<!-- Structured data: helps search engines and AI assistants understand the app -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MobileApplication",
+  "name": "TinySafe",
+  "operatingSystem": "iOS",
+  "applicationCategory": "HealthApplication",
+  "description": "TinySafe is an independent app that brings baby product recalls from the U.S. FDA and CPSC into one place, curated for the 0–4 age range. Parents can add the brands they use and see the recalls that match them.",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "author": { "@type": "Person", "name": "Angela Lee" },
+  "url": "https://tinysafe.app/"
+}
+</script>
+
+<style>
+  :root{
+    --navy:#214f78; --navy-deep:#243b54; --muted:#5a86ab; --sky1:#dceffb; --sky2:#c5e3f5;
+    --gold:#f2a427; --card:rgba(255,255,255,0.6); --line:rgba(33,79,120,0.12);
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    color:var(--navy-deep); line-height:1.65;
+    background:linear-gradient(180deg,var(--sky1) 0%, var(--sky2) 100%);
+    background-attachment:fixed; padding:0 0 60px;
+  }
+  .wrap{max-width:760px; margin:0 auto; padding:0 22px;}
+  header{text-align:center; padding:60px 22px 20px;}
+  .badge{
+    width:84px;height:84px;border-radius:50%;margin:0 auto 22px;
+    background:radial-gradient(circle at 50% 40%,#fff 0%,#fdf3e0 60%,#f7e1bc 100%);
+    box-shadow:0 0 30px rgba(245,166,35,0.34),0 6px 18px rgba(180,130,40,0.22);
+    display:flex;align-items:center;justify-content:center;
+  }
+  .badge svg{width:44px;height:44px;}
+  h1{font-size:38px; margin:0 0 10px; color:var(--navy); letter-spacing:-0.6px; line-height:1.2;}
+  .tagline{color:var(--navy-deep); font-size:19px; margin:0 auto 6px; max-width:520px; font-weight:500;}
+  .sub{color:var(--muted); font-size:15px; margin:14px auto 0; max-width:500px;}
+  .cta{margin:30px 0 6px;}
+  .cta .store{
+    display:inline-flex; align-items:center; gap:9px; text-decoration:none;
+    background:var(--navy); color:#fff; font-weight:600; font-size:16px;
+    padding:14px 26px; border-radius:999px; box-shadow:0 8px 20px rgba(33,79,120,0.25);
+  }
+  .cta .note{display:block; color:var(--muted); font-size:13px; margin-top:12px;}
+  .card{
+    background:var(--card); border:1px solid var(--line); border-radius:22px;
+    padding:30px 26px; margin:22px 0; backdrop-filter:blur(16px);
+    box-shadow:0 6px 22px rgba(120,150,180,0.14);
+  }
+  h2{font-size:23px; color:var(--navy); margin:0 0 16px; letter-spacing:-0.3px;}
+  .feat{display:flex; gap:14px; align-items:flex-start; margin:16px 0;}
+  .feat .ic{
+    flex:0 0 38px; width:38px; height:38px; border-radius:11px;
+    background:rgba(242,164,39,0.12); display:flex; align-items:center; justify-content:center;
+  }
+  .feat .ic svg{width:20px; height:20px;}
+  .feat h3{font-size:16px; color:var(--navy-deep); margin:2px 0 3px;}
+  .feat p{font-size:14.5px; color:#33536f; margin:0;}
+  p,li{font-size:15px; color:#33536f;}
+  strong{color:var(--navy-deep);}
+  .privacy-card{background:rgba(33,79,120,0.05);}
+  a{color:var(--gold); font-weight:600;}
+  .disclaimer{color:var(--muted); font-size:13px; line-height:1.55; margin:18px 0 0;}
+  footer{text-align:center; color:var(--muted); font-size:13px; padding:34px 22px 0;}
+  footer a{margin:0 8px;}
+  @media(max-width:600px){ h1{font-size:31px;} .tagline{font-size:17px;} }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="badge">
+    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M12 2L4 5v6c0 5 3.4 8.5 8 11 4.6-2.5 8-6 8-11V5l-8-3z" fill="var(--gold)" opacity="0.9"/>
+    </svg>
+  </div>
+  <h1>TinySafe</h1>
+  <p class="tagline">You can't watch everything. We track the recalls.</p>
+  <p class="sub">Baby product recalls from the FDA and CPSC, brought into one place and curated for the products babies and toddlers actually use.</p>
+  <div class="cta">
+    <a class="store" href="#" aria-disabled="true">Coming soon to the App Store</a>
+    <span class="note">iPhone · Free · United States</span>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <div class="card">
+    <h2>What TinySafe does</h2>
+
+    <div class="feat">
+      <div class="ic"><svg viewBox="0 0 24 24" fill="none"><path d="M4 7h16M4 12h16M4 17h10" stroke="var(--gold)" stroke-width="2" stroke-linecap="round"/></svg></div>
+      <div>
+        <h3>Recalls from official sources, every day</h3>
+        <p>We check recall data from the U.S. FDA and CPSC daily and bring it into one place — no more scattered government databases.</p>
+      </div>
+    </div>
+
+    <div class="feat">
+      <div class="ic"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="3.5" stroke="var(--gold)" stroke-width="2"/><path d="M5 20c0-3.5 3-6 7-6s7 2.5 7 6" stroke="var(--gold)" stroke-width="2" stroke-linecap="round"/></svg></div>
+      <div>
+        <h3>Curated for the 0–4 age range</h3>
+        <p>You see baby and toddler products — formula, gear, toys, skincare — not unrelated items. The most serious recalls are sorted to the top.</p>
+      </div>
+    </div>
+
+    <div class="feat">
+      <div class="ic"><svg viewBox="0 0 24 24" fill="none"><path d="M5 8l7-4 7 4v8l-7 4-7-4V8z" stroke="var(--gold)" stroke-width="2" stroke-linejoin="round"/></svg></div>
+      <div>
+        <h3>Add your brands</h3>
+        <p>Tell us the brands you use, and recalls that match them are flagged for you. Get a push notification when a new one matches.</p>
+      </div>
+    </div>
+
+    <div class="feat">
+      <div class="ic"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3l2.5 5 5.5.8-4 3.9.9 5.5-4.9-2.6-4.9 2.6.9-5.5-4-3.9 5.5-.8L12 3z" stroke="var(--gold)" stroke-width="1.8" stroke-linejoin="round"/></svg></div>
+      <div>
+        <h3>Plain language, not legalese</h3>
+        <p>Each recall is summarized in clear terms: what the product is, what the hazard is, and what to do — with a link to the official source.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="card privacy-card">
+    <h2>Your information stays yours</h2>
+    <p>Your child's name and date of birth <strong>never leave your device</strong> — we never send them to our servers. We collect as little as possible, we don't sell your data, and you can delete your account and all associated data anytime from within the app.</p>
+    <p style="margin-bottom:0;">You can browse all recalls without an account. Sign in only if you want personalized brand tracking.</p>
+  </div>
+
+  <p class="disclaimer">
+    TinySafe is an independent app built on publicly available government recall data. It is not affiliated with, endorsed by, or operated by the FDA, CPSC, or any government agency. TinySafe helps you keep track of recalls but cannot guarantee that every recall is detected or that an alert will always arrive — always confirm details with the official source linked in each recall. The absence of a recall does not guarantee a product is safe.
+  </p>
+
+</div>
+
+<footer>
+  <div>
+    <a href="privacy.html#privacy">Privacy Policy</a> ·
+    <a href="privacy.html#terms">Terms</a> ·
+    <a href="support.html">Support</a> ·
+    <a href="mailto:tinysafeapp@gmail.com">Contact</a>
+  </div>
+  <p style="margin-top:14px;">© 2026 Angela Lee · TinySafe</p>
+</footer>
+
+</body>
+</html>
