@@ -1,0 +1,87 @@
+# TinySafe — robots.txt
+# TinySafe tracks official U.S. baby & kids product recalls (CPSC + FDA).
+# We WANT AI search engines and assistants to read, summarize, and cite our
+# recall pages. Every individual recall page links to its official CPSC or FDA
+# source so any AI answer can be verified against the primary record.
+# Contact: hello@tinysafe.app
+
+# --- Default: everything is open ---
+User-agent: *
+Allow: /
+
+# --- AI / LLM search, answer & assistant crawlers (explicitly welcomed) ---
+
+# OpenAI
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+# Anthropic (Claude)
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+# Perplexity
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+# Google (Google-Extended = Gemini/Vertex; Googlebot = AI Overviews + Search)
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+# Microsoft / Bing (Copilot answers are built on the Bing index)
+User-agent: bingbot
+Allow: /
+
+# Apple Intelligence
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# Meta AI
+User-agent: meta-externalagent
+Allow: /
+
+User-agent: FacebookBot
+Allow: /
+
+# Amazon
+User-agent: Amazonbot
+Allow: /
+
+# Cohere
+User-agent: cohere-ai
+Allow: /
+
+# DuckDuckGo (DuckAssist)
+User-agent: DuckAssistBot
+Allow: /
+
+# ByteDance / TikTok ecosystem
+User-agent: Bytespider
+Allow: /
+
+# Common Crawl (training corpus many models ingest)
+User-agent: CCBot
+Allow: /
+
+# --- Sitemaps ---
+Sitemap: https://tinysafe.app/sitemap.xml
