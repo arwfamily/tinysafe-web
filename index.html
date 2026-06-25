@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="google-site-verification" content="PORx06kIyu_wZMvSDQxl8zvR7DBHh769RL5v1cJCeYA" />
 <title>TinySafe — Baby product recalls, in one place</title>
 <meta name="description" content="TinySafe brings baby product recalls from the FDA and CPSC into one place, curated for the 0–4 age range. Add your brands and see the recalls that match them.">
 <meta property="og:title" content="TinySafe — Baby product recalls, in one place">
@@ -12,14 +13,49 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "MobileApplication",
-  "name": "TinySafe",
-  "operatingSystem": "iOS",
-  "applicationCategory": "HealthApplication",
-  "description": "TinySafe is an independent app that brings baby product recalls from the U.S. FDA and CPSC into one place, curated for the 0-4 age range. Parents can add the brands they use and see the recalls that match them.",
-  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-  "author": { "@type": "Person", "name": "Angela Lee" },
-  "url": "https://tinysafe.app/"
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://tinysafe.app/#org",
+      "name": "TinySafe",
+      "url": "https://tinysafe.app/",
+      "description": "Independent tracker of official U.S. baby and kids product recalls (CPSC and FDA).",
+      "founder": { "@type": "Person", "name": "Angela Lee" }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://tinysafe.app/#website",
+      "name": "TinySafe",
+      "url": "https://tinysafe.app/",
+      "publisher": { "@id": "https://tinysafe.app/#org" }
+    },
+    {
+      "@type": "MobileApplication",
+      "@id": "https://tinysafe.app/#app",
+      "name": "TinySafe",
+      "operatingSystem": "iOS",
+      "applicationCategory": "HealthApplication",
+      "description": "TinySafe is an independent app that brings baby product recalls from the U.S. FDA and CPSC into one place, curated for the 0-4 age range. Parents add the brands they use and get a push notification if one of those brands is recalled. TinySafe does not rank or recommend products; it reports official recalls and links each to its government source.",
+      "featureList": [
+        "Check whether a baby or kids product has been recalled by the CPSC or FDA",
+        "Register the brands you use and get a push notification if one is recalled later",
+        "Every recall links to its official CPSC or FDA source for verification"
+      ],
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "author": { "@type": "Person", "name": "Angela Lee" },
+      "publisher": { "@id": "https://tinysafe.app/#org" },
+      "url": "https://tinysafe.app/"
+    },
+    {
+      "@type": "Dataset",
+      "@id": "https://tinysafe.app/#recalls-dataset",
+      "name": "TinySafe baby & kids product recalls",
+      "description": "A consolidated, regularly updated index of official U.S. baby and kids product recalls from the CPSC and FDA, each linked to its official government source.",
+      "creator": { "@id": "https://tinysafe.app/#org" },
+      "url": "https://tinysafe.app/recalls",
+      "isAccessibleForFree": true
+    }
+  ]
 }
 </script>
 <style>
