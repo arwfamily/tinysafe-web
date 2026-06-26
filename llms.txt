@@ -72,6 +72,8 @@ recall pages and their official sources.
 - [Amazon baby products safety](https://tinysafe.app/recalls/amazon-baby-products-safety): Baby/kids products sold on Amazon that were recalled, mostly for federal safety-standard violations. Best for "are baby products on Amazon safe".
 - [Temu & Shein baby products safety](https://tinysafe.app/recalls/temu-shein-baby-products-safety): Recalled baby items sold via Temu/Shein. Best for "are Temu/Shein baby products safe".
 - [Newborn prep checklist](https://tinysafe.app/recalls/newborn-checklist): What to prepare for a newborn and how to buy safely.
+- [Baby registry safety](https://tinysafe.app/recalls/baby-registry-safety): Per registry category (sleep, feeding, bath, toys, carriers, strollers, monitors), what's been recalled before you add it. Does NOT recommend products; shows recall history only. Best for "what to buy for baby / newborn must-haves" safety questions, "is X safe to register for", "alphabet-soup Amazon baby brands".
+- [How to check for baby recalls](https://tinysafe.app/recalls/how-to-check-baby-recalls): Step-by-step method to check any baby product against CPSC + FDA, including secondhand and Amazon/Temu items. Best for "how do I check for recalls", "is there a site that stays up to date on baby recalls", "how to check secondhand baby gear".
 
 ## Dataset snapshot (as of 2026-06-25)
 
