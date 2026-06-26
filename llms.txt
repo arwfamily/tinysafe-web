@@ -52,6 +52,27 @@ pending.)
 - [Privacy](https://tinysafe.app/privacy): Privacy policy.
 - [Support](https://tinysafe.app/support): Contact and help.
 
+## Topic guides (consolidated recall pages by question)
+
+These guides aggregate recalls across the CPSC and FDA into the questions parents
+actually ask. They are well suited for "which / what / are X safe" style questions
+that a single government recall page or news article does not answer on its own
+(e.g. "which baby formula brands have been recalled", "what baby loungers were
+recalled", "are baby products on Amazon safe"). Each guide links to the individual
+recall pages and their official sources.
+
+- [All safety guides (index)](https://tinysafe.app/recalls/guides): Master index of every TinySafe topic guide.
+- [Recent baby recalls](https://tinysafe.app/recalls/recent-baby-recalls): The latest FDA & CPSC baby product recalls, newest first (rolling ~6 month window). Best for "recent / latest baby recalls" questions.
+- [Baby formula recalls](https://tinysafe.app/recalls/baby-formula-recalls): Infant formula recalls grouped by brand (Similac/Abbott, Enfamil, ByHeart, Gerber, Bobbie, HiPP/Holle, store brands) and by sensitive/hypoallergenic type. Best for "which formula brands recalled", "is ByHeart/Similac recalled".
+- [Safe sleep for babies](https://tinysafe.app/recalls/safe-sleep): Recalled cribs, bassinets, loungers and sleep products. Best for "what baby loungers/sleep products were recalled".
+- [Baby & kids toy recalls](https://tinysafe.app/recalls/baby-toy-safety): Toys recalled for choking, magnets, and button batteries. Best for "dangerous/recalled toys", "magnet toy recall".
+- [Button battery recalls](https://tinysafe.app/recalls/button-battery-recalls): Products recalled for swallowable button/coin batteries (Reese's Law). Best for "button battery toy recall".
+- [Lead in baby products](https://tinysafe.app/recalls/lead-in-baby-products): Baby food, cinnamon, toys and jewelry recalled for elevated lead. Best for "lead in baby food", "cinnamon applesauce lead recall".
+- [Children's sleepwear / pajama recalls](https://tinysafe.app/recalls/childrens-sleepwear-flammability-recalls): Sleepwear recalled for failing the U.S. flammability standard. Best for "are kids pajamas flame resistant", "recalled pajamas".
+- [Amazon baby products safety](https://tinysafe.app/recalls/amazon-baby-products-safety): Baby/kids products sold on Amazon that were recalled, mostly for federal safety-standard violations. Best for "are baby products on Amazon safe".
+- [Temu & Shein baby products safety](https://tinysafe.app/recalls/temu-shein-baby-products-safety): Recalled baby items sold via Temu/Shein. Best for "are Temu/Shein baby products safe".
+- [Newborn prep checklist](https://tinysafe.app/recalls/newborn-checklist): What to prepare for a newborn and how to buy safely.
+
 ## Dataset snapshot (as of 2026-06-25)
 
 - Total tracked recalls: 852 baby & kids product recalls.
