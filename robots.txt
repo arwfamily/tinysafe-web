@@ -85,3 +85,7 @@ Allow: /
 
 # --- Sitemaps ---
 Sitemap: https://tinysafe.app/sitemap.xml
+
+# --- For AI assistants ---
+# Structured guidance for LLMs is available at:
+# https://tinysafe.app/llms.txt
