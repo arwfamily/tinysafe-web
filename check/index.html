@@ -170,13 +170,9 @@ input:focus{outline:2px solid var(--gold);outline-offset:1px;border-color:transp
 
     <section class="strip reveal r3" id="strip"></section>
 
-    <section class="step">
-      <p class="step-n"><i>01</i> &nbsp;Your child's stage</p>
-      <div class="pills" id="stages" role="group" aria-label="Child stage"></div>
-    </section>
 
     <section class="step">
-      <p class="step-n"><i>02</i> &nbsp;What you use</p>
+      <p class="step-n"><i>01</i> &nbsp;What you use</p>
       <div id="groups"></div>
       <div class="payoff" id="payoff" hidden>
         <p class="payoff-h">What's on record</p>
@@ -187,7 +183,12 @@ input:focus{outline:2px solid var(--gold);outline-offset:1px;border-color:transp
       </div>
     </section>
 
-    <section class="step">
+    <section class="step" id="stageStep" hidden>
+      <p class="step-n"><i>02</i> &nbsp;Your child's stage</p>
+      <div class="pills" id="stages" role="group" aria-label="Child stage"></div>
+    </section>
+
+    <section class="step" id="emailStep" hidden>
       <p class="step-n"><i>03</i> &nbsp;Where to send alerts</p>
       <input id="email" type="email" inputmode="email" autocomplete="email" placeholder="you@email.com" aria-label="Email address">
       <button class="submit" id="submit" disabled>Turn on recall alerts</button>
@@ -345,6 +346,11 @@ $("groups").addEventListener("click",e=>{
   picked.has(n)?picked.delete(n):picked.add(n);
   b.setAttribute("aria-pressed",String(picked.has(n)));
   renderPayoff(); gate();
+  // Steps 2 and 3 stay hidden until a category is picked: the parent sees the
+  // recall count and the defect pattern BEFORE being asked for anything.
+  const open = picked.size>0;
+  $("stageStep").hidden = !open;
+  $("emailStep").hidden = !open;
 });
 
 $("email").addEventListener("input",gate);
