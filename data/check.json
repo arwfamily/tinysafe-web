@@ -1,0 +1,142 @@
+{
+ "total": 823,
+ "cpsc_total": 330,
+ "updated": "20260716",
+ "recent": [
+  {
+   "name": "Oitnlaughter Projecting Finger Light Toys",
+   "id": "26-617",
+   "date": "2026-07",
+   "hazard": "Battery",
+   "slug": "oitnlaughter-projecting-finger-light-toys-26-617"
+  },
+  {
+   "name": "SDADI Kitchen Step Stools",
+   "id": "26-628",
+   "date": "2026-07",
+   "hazard": "Fall",
+   "slug": "sdadi-kitchen-step-stools-26-628"
+  },
+  {
+   "name": "Target Recalls Cat & Jack Children's Sandals",
+   "id": "26-629",
+   "date": "2026-07",
+   "hazard": "Choking",
+   "slug": "target-recalls-cat-jack-children-s-sandals-26-629"
+  }
+ ],
+ "categories": [
+  {
+   "name": "Pajamas & sleepwear",
+   "count": 42,
+   "top_hazard": "failing flammability rules",
+   "top_hazard_count": 38,
+   "latest": "2026-06"
+  },
+  {
+   "name": "Light-up toys",
+   "count": 22,
+   "top_hazard": "button-battery ingestion",
+   "top_hazard_count": 19,
+   "latest": "2026-07"
+  },
+  {
+   "name": "Magnet toys & building sets",
+   "count": 19,
+   "top_hazard": "magnet ingestion",
+   "top_hazard_count": 18,
+   "latest": "2026-04"
+  },
+  {
+   "name": "Bassinets & cribs",
+   "count": 18,
+   "top_hazard": "suffocation",
+   "top_hazard_count": 9,
+   "latest": "2026-03"
+  },
+  {
+   "name": "Baby loungers",
+   "count": 15,
+   "top_hazard": "suffocation",
+   "top_hazard_count": 9,
+   "latest": "2026-07"
+  },
+  {
+   "name": "High chairs & boosters",
+   "count": 14,
+   "top_hazard": "falls and tip-overs",
+   "top_hazard_count": 9,
+   "latest": "2026-05"
+  },
+  {
+   "name": "Baby carriers & swings",
+   "count": 13,
+   "top_hazard": "suffocation",
+   "top_hazard_count": 8,
+   "latest": "2026-04"
+  },
+  {
+   "name": "Safety gates",
+   "count": 10,
+   "top_hazard": "entrapment",
+   "top_hazard_count": 9,
+   "latest": "2026-02"
+  },
+  {
+   "name": "Strollers & car seat gear",
+   "count": 10,
+   "top_hazard": "falls and tip-overs",
+   "top_hazard_count": 4,
+   "latest": "2026-06"
+  },
+  {
+   "name": "Toddler towers & step stools",
+   "count": 9,
+   "top_hazard": "falls and tip-overs",
+   "top_hazard_count": 9,
+   "latest": "2026-07"
+  },
+  {
+   "name": "Baby bath seats & tubs",
+   "count": 7,
+   "top_hazard": "falls and tip-overs",
+   "top_hazard_count": 6,
+   "latest": "2026-02"
+  },
+  {
+   "name": "Teethers & pacifier clips",
+   "count": 7,
+   "top_hazard": "choking",
+   "top_hazard_count": 6,
+   "latest": "2026-06"
+  },
+  {
+   "name": "Infant walkers & bouncers",
+   "count": 6,
+   "top_hazard": "falls and tip-overs",
+   "top_hazard_count": 5,
+   "latest": "2026-07"
+  },
+  {
+   "name": "Dressers & nursery furniture",
+   "count": 3,
+   "top_hazard": "entrapment",
+   "top_hazard_count": 3,
+   "latest": "2026-06"
+  },
+  {
+   "name": "Crib & playard mattresses",
+   "count": 2,
+   "top_hazard": "suffocation",
+   "top_hazard_count": 2,
+   "latest": "2024-03"
+  },
+  {
+   "name": "Nursing pillows",
+   "count": 2,
+   "top_hazard": "suffocation",
+   "top_hazard_count": 2,
+   "latest": "2026-07"
+  }
+ ]
+}
