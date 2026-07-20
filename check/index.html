@@ -65,6 +65,9 @@ h1 .glow{background:linear-gradient(120deg,var(--gold-deep),var(--gold));
 .step-n i{font-style:normal;color:var(--gold-deep)}
 
 .pills{display:flex;flex-wrap:wrap;gap:9px}
+.gh{font-size:12.5px;font-weight:600;color:var(--navy-deep);margin:0 0 10px;letter-spacing:.2px}
+.grp{margin:0 0 20px}
+.grp:last-child{margin-bottom:0}
 .pill{font:inherit;font-size:14.5px;font-weight:500;color:var(--navy-deep);
   background:rgba(255,255,255,.7);border:1px solid var(--line);border-radius:999px;
   padding:10px 16px;cursor:pointer;line-height:1.2;
@@ -145,8 +148,8 @@ input:focus{outline:2px solid var(--gold);outline-offset:1px;border-color:transp
   </div>
 
   <main id="form">
-    <h1 class="reveal r1"><span id="cpscTotal">330</span> pieces of baby gear were recalled. <span class="glow">Do you use one?</span></h1>
-    <p class="sub reveal r2">Pick what's in your home. We'll email you the moment something in that category is recalled.</p>
+    <h1 class="reveal r1"><span id="scopeTotal">405</span> baby products have been recalled. <span class="glow">Do you own one?</span></h1>
+    <p class="sub reveal r2"><b id="last12">214</b> of them in the last 12 months. Pick what's in your home and we'll email you the moment something in that category is recalled.</p>
 
     <section class="strip reveal r3" id="strip"></section>
 
@@ -157,7 +160,7 @@ input:focus{outline:2px solid var(--gold);outline-offset:1px;border-color:transp
 
     <section class="step">
       <p class="step-n"><i>02</i> &nbsp;What you use</p>
-      <div class="pills" id="cats" role="group" aria-label="Gear categories"></div>
+      <div id="groups"></div>
       <div class="payoff" id="payoff" hidden>
         <p class="payoff-h">What's on record</p>
         <p class="payoff-n" id="payoffN"></p>
@@ -192,7 +195,9 @@ input:focus{outline:2px solid var(--gold);outline-offset:1px;border-color:transp
   </section>
 
   <footer class="foot">
-    Data from U.S. CPSC and FDA, updated daily · <span id="updated"></span><br>
+    U.S. CPSC gear recalls since <span id="gearFrom">2024</span> and FDA feeding &amp; care
+    recalls from the last <span id="feedYears">3</span> years. Hospital and clinical
+    recalls are not listed. Updated daily · <span id="updated"></span><br>
     <a href="/">tinysafe.app</a>
   </footer>
 </div>
@@ -209,13 +214,18 @@ const STAGES = ["Newborn","Baby","Toddler","Preschool"];
 /* Minimal fallback if the data file fails to load. Counts are omitted rather
    than guessed — this page must never state a number it cannot verify. */
 const FALLBACK = {
-  total:823, cpsc_total:330, updated:"20260716", recent:[], categories:[
-    "Baby loungers","Bassinets & cribs","High chairs & boosters","Safety gates",
-    "Toddler towers & step stools","Strollers & car seat gear","Baby carriers & swings",
-    "Infant walkers & bouncers","Baby bath seats & tubs","Teethers & pacifier clips",
-    "Magnet toys & building sets","Light-up toys","Pajamas & sleepwear",
-    "Nursing pillows","Crib & playard mattresses","Dressers & nursery furniture"
-  ].map(name=>({name,count:null,top_hazard:"",top_hazard_count:0}))
+  total:405, last12:214, updated:"2026-07-16", gear_from:2024, feeding_years:3,
+  recent:[], groups:[
+    {key:"gear", label:"Gear you use", items:[
+      "Baby loungers","Bassinets & cribs","Crib & playard mattresses","High chairs & boosters",
+      "Safety gates","Toddler towers & step stools","Infant walkers & bouncers",
+      "Baby bath seats & tubs","Strollers & car seat gear","Baby carriers & swings",
+      "Nursing pillows","Teethers & pacifier clips","Magnet toys & building sets",
+      "Light-up toys","Pajamas & sleepwear"].map(name=>({name,count:null}))},
+    {key:"feeding", label:"Feeding & care", items:[
+      "Infant formula","Baby food & purees","Children's medicine","Vitamins & supplements",
+      "Baby wipes","Lotion, cream & bath","Baby sunscreen"].map(name=>({name,count:null}))}
+  ]
 };
 
 let DATA = FALLBACK;
@@ -252,19 +262,27 @@ function renderStages(){
     `<button type="button" class="pill" data-stage="${s}" aria-pressed="false">${s}</button>`).join("");
 }
 
+function allCats(){ return (DATA.groups||[]).flatMap(g=>g.items); }
+
 function renderCats(){
-  $("cats").innerHTML = DATA.categories.map(c=>{
-    const on=picked.has(c.name);
-    return `<button type="button" class="pill" data-cat="${esc(c.name)}" aria-pressed="${on}">${esc(c.name)}${
-      typeof c.count==="number"?`<span class="c">${c.count}</span>`:""}</button>`;
-  }).join("");
+  $("groups").innerHTML = (DATA.groups||[]).map(g=>`
+    <div class="grp">
+      <p class="gh">${esc(g.label)}</p>
+      <div class="pills" role="group" aria-label="${esc(g.label)}">${
+        g.items.map(c=>{
+          const on=picked.has(c.name);
+          return `<button type="button" class="pill" data-cat="${esc(c.name)}" aria-pressed="${on}">${esc(c.name)}${
+            typeof c.count==="number"?`<span class="c">${c.count}</span>`:""}</button>`;
+        }).join("")}
+      </div>
+    </div>`).join("");
 }
 
 function renderPayoff(){
   const box=$("payoff");
   if(!picked.size){ box.hidden=true; return; }
   box.hidden=false;
-  const chosen = DATA.categories.filter(c=>picked.has(c.name));
+  const chosen = allCats().filter(c=>picked.has(c.name));
   const known  = chosen.filter(c=>typeof c.count==="number");
 
   if(!known.length){
@@ -279,8 +297,11 @@ function renderPayoff(){
   $("payoffP").textContent = `across the ${chosen.length} categor${chosen.length>1?"ies":"y"} you picked.`;
 
   // The strongest thing we can show: the repeating defect in the worst category.
-  const worst = known.slice().sort((a,b)=>b.count-a.count)[0];
-  if(worst && worst.top_hazard && worst.top_hazard_count>1){
+  // Only GEAR categories carry a defect pattern — FDA feeding & care records do
+  // not name a mechanism, so they must never be used for this sentence.
+  const withPattern = known.filter(c=>c.top_hazard && c.top_hazard_count>1);
+  const worst = withPattern.slice().sort((a,b)=>b.count-a.count)[0];
+  if(worst){
     $("pattern").hidden=false;
     $("pattern").innerHTML =
       `Most of them repeat the same defect. In <b>${esc(worst.name)}</b>, ` +
@@ -301,7 +322,7 @@ $("stages").addEventListener("click",e=>{
   [...$("stages").children].forEach(c=>c.setAttribute("aria-pressed",String(c===b)));
 });
 
-$("cats").addEventListener("click",e=>{
+$("groups").addEventListener("click",e=>{
   const b=e.target.closest("[data-cat]"); if(!b) return;
   const n=b.dataset.cat;
   picked.has(n)?picked.delete(n):picked.add(n);
@@ -350,11 +371,9 @@ $("submit").addEventListener("click",async()=>{
   if(DATA_URL){
     try{ const r=await fetch(DATA_URL); if(r.ok) DATA=await r.json(); }catch(e){}
   }
-  if(DATA.cpsc_total) $("cpscTotal").textContent=DATA.cpsc_total;
-  if(DATA.updated){
-    const d=String(DATA.updated);
-    $("updated").textContent="last recall "+d.slice(0,4)+"-"+d.slice(4,6)+"-"+d.slice(6,8);
-  }
+  if(DATA.total)  $("scopeTotal").textContent=DATA.total;
+  if(DATA.last12) $("last12").textContent=DATA.last12;
+  if(DATA.updated) $("updated").textContent="last recall "+DATA.updated;
   renderStrip(); renderStages(); renderCats();
 })();
 </script>
