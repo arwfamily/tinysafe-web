@@ -131,7 +131,7 @@ def build(db):
         "feeding_years": CONSUMABLE_YEARS,
         "recent": recent,
         "groups": [
-            {"key":"gear",    "label":"Gear you use",   "items": group(gear_pool, GEAR, True)},
+            {"key":"gear",    "label":"Gear",           "items": group(gear_pool, GEAR, True)},
             {"key":"feeding", "label":"Feeding & care", "items": group(feed_pool, FEEDING, False)},
         ],
     }

@@ -32,7 +32,7 @@
  "groups": [
   {
    "key": "gear",
-   "label": "Gear you use",
+   "label": "Gear",
    "items": [
     {
      "name": "Baby loungers",
