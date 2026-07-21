@@ -177,7 +177,7 @@ input:focus{outline:2px solid var(--gold);outline-offset:1px;border-color:transp
 
   <main id="form">
     <h1 class="reveal r1">Five stars doesn't mean<br><span class="glow">it is safe for your baby.</span></h1>
-    <p class="sub reveal r2">The reviews never mention it. We read every baby recall so you don't have to. Tell us what you're buying and we'll show you the three things to check first.</p>
+    <p class="sub reveal r2">Made to help parents decide well. The reviews never tell you whether it was recalled, and baby gear costs too much to buy twice. Check first and cart second.</p>
 
     <section class="strip reveal r3" id="strip"></section>
 
@@ -200,11 +200,11 @@ input:focus{outline:2px solid var(--gold);outline-offset:1px;border-color:transp
     </section>
 
     <section class="step" id="emailStep" hidden>
-      <p class="step-n"><i>03</i> &nbsp;Want the app first?</p>
+      <p class="step-n"><i>03</i> &nbsp;Want the full recall list for what you picked?</p>
       <input id="email" type="email" inputmode="email" autocomplete="email" placeholder="you@email.com" aria-label="Email address">
-      <button class="submit" id="submit" disabled>Send me the app</button>
+      <button class="submit" id="submit" disabled>Send me the list</button>
       <p class="err" id="err" hidden></p>
-      <p class="fine">Get TinySafe the day it launches. Nothing else, ever.</p>
+      <p class="fine">We'll send it over, plus TinySafe the day it launches. Nothing else, ever.</p>
     </section>
   </main>
 
@@ -343,8 +343,8 @@ function renderPayoff(){
   $("locked").innerHTML =
     `<span class="lk">In the app</span>` +
     `Save the brands already in your nursery and we watch them from then on. ` +
-    `If one is recalled later, your phone tells you that morning. ` +
-    `Plus every recall behind these checks, by brand and model.`;
+    `If one is recalled later, your phone tells you that morning, ` +
+    `matched to your exact brand and model rather than the category.`;
 }
 
 function gate(){
@@ -401,7 +401,7 @@ $("submit").addEventListener("click",async()=>{
     $("doneN").textContent=`${picked.size} categor${picked.size>1?"ies":"y"}`;
     window.scrollTo(0,0);
   }catch(err){
-    btn.disabled=false; btn.textContent="Send me the app";
+    btn.disabled=false; btn.textContent="Send me the list";
     $("err").hidden=false;
     $("err").textContent="That didn't go through. Check your connection and try again.";
   }
