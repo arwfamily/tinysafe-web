@@ -176,8 +176,8 @@ input:focus{outline:2px solid var(--gold);outline-offset:1px;border-color:transp
   </div>
 
   <main id="form">
-    <h1 class="reveal r1">Before it comes home,<br><span class="glow">give it one look.</span></h1>
-    <p class="sub reveal r2">We read every recall notice so you don't have to. Tell us what you're using and we'll show you the three things worth checking. Takes about thirty seconds.</p>
+    <h1 class="reveal r1">Five stars doesn't mean<br><span class="glow">it wasn't recalled.</span></h1>
+    <p class="sub reveal r2">The reviews never mention it. We read every baby recall so you don't have to. Tell us what you're buying and we'll show you the three things to check first.</p>
 
     <section class="strip reveal r3" id="strip"></section>
 
@@ -186,7 +186,7 @@ input:focus{outline:2px solid var(--gold);outline-offset:1px;border-color:transp
       <p class="step-n"><i>01</i> &nbsp;What are you using?</p>
       <div id="groups"></div>
       <div class="payoff" id="payoff" hidden>
-        <p class="payoff-h">Three things worth checking</p>
+        <p class="payoff-h">Check first. Cart second.</p>
         <p class="payoff-n" id="payoffN"></p>
         <p class="payoff-p" id="payoffP"></p>
         <div class="pattern" id="pattern" hidden></div>
@@ -200,23 +200,23 @@ input:focus{outline:2px solid var(--gold);outline-offset:1px;border-color:transp
     </section>
 
     <section class="step" id="emailStep" hidden>
-      <p class="step-n"><i>03</i> &nbsp;Want us to keep watching?</p>
+      <p class="step-n"><i>03</i> &nbsp;Want the app first?</p>
       <input id="email" type="email" inputmode="email" autocomplete="email" placeholder="you@email.com" aria-label="Email address">
-      <button class="submit" id="submit" disabled>Keep watching for me</button>
+      <button class="submit" id="submit" disabled>Send me the app</button>
       <p class="err" id="err" hidden></p>
-      <p class="fine">Only the things you picked. Nothing else, ever.</p>
+      <p class="fine">The download link the day it launches, and a note if something you picked gets recalled before then. Nothing else, ever.</p>
     </section>
   </main>
 
   <section class="done" id="done" hidden>
-    <h2>We've got it from here.</h2>
-    <p>We'll keep reading the notices for <b id="doneN">your categories</b>. If something turns up, you'll hear it from us first.</p>
+    <h2>You're first in line.</h2>
+    <p>You'll get the app the day it launches. Until then we're reading the notices for <b id="doneN">your categories</b>.</p>
     <div class="up">
       <p class="up-h">Coming to the App Store</p>
       <ul>
-        <li>Check anything by brand and model, right in the shop</li>
-        <li>Your whole nursery in one place</li>
-        <li>Know the moment something changes, not the next morning</li>
+        <li>Search any brand or model before you buy it</li>
+        <li>Add what you already own, in one place</li>
+        <li>A push the moment one of them is recalled</li>
         <li>Every past recall behind each check</li>
       </ul>
       <p class="up-p">You'll get the download link the day it's live.</p>
@@ -338,8 +338,13 @@ function renderPayoff(){
       `<p class="ck-src">from ${inf.recalls} recall${inf.recalls>1?"s":""} on record</p></div>`;
   }).join("");
 
+  // The taste: they just got the rule. The app gives them the products behind it.
+  const n = withChecks.reduce((s,c)=>s+CHECKS[c.name].recalls,0);
   $("locked").hidden=false;
-  $("locked").textContent = "Checked them? Bring it home.";
+  $("locked").innerHTML =
+    `<span class="lk">In the app</span>` +
+    `The ${n} recall${n>1?"s":""} these checks came from, by brand, model and date. ` +
+    `Add what you already own and get a push the moment one of them is recalled.`;
 }
 
 function gate(){
@@ -396,7 +401,7 @@ $("submit").addEventListener("click",async()=>{
     $("doneN").textContent=`${picked.size} categor${picked.size>1?"ies":"y"}`;
     window.scrollTo(0,0);
   }catch(err){
-    btn.disabled=false; btn.textContent="Keep watching for me";
+    btn.disabled=false; btn.textContent="Send me the app";
     $("err").hidden=false;
     $("err").textContent="That didn't go through. Check your connection and try again.";
   }
