@@ -9,12 +9,11 @@ the largest are medical-device makers. Category selection does have density.
 
 Two groups, two different time windows, on purpose:
 
-  GEAR (CPSC)          — every record we hold. Cribs, high chairs and loungers get
-                         handed down, resold and reused for years, so an older
-                         recall is still sitting in somebody's nursery today.
-  FEEDING & CARE (FDA) — last 3 years only. Formula, food and wipes are consumed.
-                         A 2015 formula lot does not exist anymore, and listing it
-                         would inflate the count with records no parent can act on.
+Both groups now use EVERY record we hold, back to 2003. The page moved from an
+audit of what you own to a check before you buy, and for that the question is
+what keeps going wrong with a KIND of product, not whether one particular lot is
+still on a shelf. A 2015 formula contamination is gone from the cupboard but it
+still tells a parent what this category fails at, which is the whole point.
 
 MEDICAL RECORDS ARE EXCLUDED. Neonatal resuscitators, ventilators and hospital
 convenience kits are not things a parent owns. They stay in the database (a NICU
@@ -30,8 +29,6 @@ Usage (from repo root):
 """
 import json, re, sys, os, datetime
 from collections import Counter
-
-CONSUMABLE_YEARS = 3   # window for FDA feeding & care records
 
 # Order is deliberate: what a parent worries about at night comes first, not what
 # has the biggest count. Sleepwear carries the most recalls but they are almost
@@ -109,8 +106,7 @@ def build(db):
     # Hospital / clinical records never become a parent-facing option.
     consumer=[r for r in recs if r.get('display_category')!='Medical']
     gear_pool=[r for r in consumer if is_cpsc(r)]
-    cut=newest-datetime.timedelta(days=365*CONSUMABLE_YEARS)
-    feed_pool=[r for r in consumer if not is_cpsc(r) and rdate(r)>=cut]
+    feed_pool=[r for r in consumer if not is_cpsc(r)]
 
     scope=gear_pool+feed_pool
     yr=newest-datetime.timedelta(days=365)
@@ -127,8 +123,6 @@ def build(db):
         "gear_total": len(gear_pool),
         "feeding_total": len(feed_pool),
         "updated": newest.isoformat(),
-        "gear_from": min(rdate(r) for r in gear_pool).year,
-        "feeding_years": CONSUMABLE_YEARS,
         "recent": recent,
         "groups": [
             {"key":"gear",    "label":"Gear",           "items": group(gear_pool, GEAR, True)},
@@ -143,9 +137,8 @@ if __name__=="__main__":
     os.makedirs(os.path.dirname(out) or ".", exist_ok=True)
     json.dump(data, open(out,"w"), ensure_ascii=False, indent=1)
     print(f"{out}: {data['total']} in scope "
-          f"(gear {data['gear_total']} since {data['gear_from']}, "
-          f"feeding {data['feeding_total']} last {CONSUMABLE_YEARS}y), "
-          f"{data['last12']} in the last 12 months")
+          f"(gear {data['gear_total']}, feeding {data['feeding_total']}) "
+          f"— every record held, no time window")
     for g in data["groups"]:
         print(f"\n  {g['label']}")
         for c in g["items"]:

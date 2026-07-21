@@ -1,11 +1,9 @@
 {
- "total": 405,
- "last12": 214,
- "gear_total": 330,
- "feeding_total": 75,
+ "total": 636,
+ "last12": 215,
+ "gear_total": 331,
+ "feeding_total": 305,
  "updated": "2026-07-16",
- "gear_from": 2024,
- "feeding_years": 3,
  "recent": [
   {
    "name": "Oitnlaughter Projecting Finger Light Toys",
@@ -132,31 +130,31 @@
    "items": [
     {
      "name": "Infant formula",
-     "count": 23
+     "count": 48
     },
     {
      "name": "Baby food & purees",
-     "count": 8
+     "count": 21
     },
     {
      "name": "Children's medicine",
-     "count": 11
+     "count": 42
     },
     {
      "name": "Vitamins & supplements",
-     "count": 6
+     "count": 25
     },
     {
      "name": "Baby wipes",
-     "count": 2
+     "count": 9
     },
     {
      "name": "Lotion, cream & bath",
-     "count": 6
+     "count": 27
     },
     {
      "name": "Baby sunscreen",
-     "count": 3
+     "count": 7
     }
    ]
   }
