@@ -1,0 +1,402 @@
+{
+ "categories": [
+  {
+   "category": "Infant formula",
+   "recalls": 48,
+   "kind": "lot",
+   "checks": [
+    {
+     "text": "You cannot see a formula recall. Contamination and dosing errors are what CPSC and FDA cite, and none of it is visible.",
+     "seen_in": 48
+    },
+    {
+     "text": "Photograph the lot number and best-by date on the bottom of the tin before you open it.",
+     "seen_in": 48
+    },
+    {
+     "text": "Recalls name specific lots, not brands. That photo is the whole check.",
+     "seen_in": 48
+    }
+   ]
+  },
+  {
+   "category": "Lotion, cream & bath",
+   "recalls": 45,
+   "kind": "lot",
+   "checks": [
+    {
+     "text": "Photograph the batch code on the tube or bottle.",
+     "seen_in": 45
+    },
+    {
+     "text": "Contamination is the usual reason, so recalls name batches rather than whole brands.",
+     "seen_in": 45
+    },
+    {
+     "text": "Stop using anything that changes in smell, colour or texture.",
+     "seen_in": 45
+    }
+   ]
+  },
+  {
+   "category": "Pajamas & sleepwear",
+   "recalls": 42,
+   "kind": "inspect",
+   "checks": [
+    {
+     "text": "Loose-fitting cotton sold as sleepwear is the exact thing being recalled. Snug-fit is the rule.",
+     "seen_in": 39
+    },
+    {
+     "text": "Look for the flame-resistant or snug-fit label. Almost every recall in this category is a sleepwear that failed the flammability standard.",
+     "seen_in": 37
+    },
+    {
+     "text": "Pull on the zipper pull and any snap. Detaching hardware is the other pattern here.",
+     "seen_in": 2
+    }
+   ]
+  },
+  {
+   "category": "Children's medicine",
+   "recalls": 42,
+   "kind": "lot",
+   "checks": [
+    {
+     "text": "Photograph the lot number and expiry on the box, not just the bottle.",
+     "seen_in": 42
+    },
+    {
+     "text": "Recalls here are usually about dosing, contamination or undeclared ingredients, none of which you can see.",
+     "seen_in": 42
+    },
+    {
+     "text": "Keep the box until the bottle is finished, because the lot number lives on it.",
+     "seen_in": 42
+    }
+   ]
+  },
+  {
+   "category": "Vitamins & supplements",
+   "recalls": 39,
+   "kind": "lot",
+   "checks": [
+    {
+     "text": "Photograph the lot number on the bottle before first use.",
+     "seen_in": 39
+    },
+    {
+     "text": "Undeclared ingredients and incorrect levels are the repeated pattern, and neither is visible.",
+     "seen_in": 39
+    },
+    {
+     "text": "Keep the packaging until the bottle is done.",
+     "seen_in": 39
+    }
+   ]
+  },
+  {
+   "category": "Light-up toys",
+   "recalls": 22,
+   "kind": "inspect",
+   "checks": [
+    {
+     "text": "Try to open the battery compartment with your hands. If it opens without a screwdriver, a child can open it too.",
+     "seen_in": 19
+    },
+    {
+     "text": "If a button battery is swallowed it burns internally within hours. Treat a missing battery as an emergency.",
+     "seen_in": 18
+    },
+    {
+     "text": "Check that the compartment closes flush and the screw is actually there.",
+     "seen_in": 5
+    }
+   ]
+  },
+  {
+   "category": "Baby food & purees",
+   "recalls": 21,
+   "kind": "lot",
+   "checks": [
+    {
+     "text": "Photograph the lot code on the pouch or jar before it goes in the cupboard.",
+     "seen_in": 21
+    },
+    {
+     "text": "Recalls here name lots and date ranges, so the code is what matters, not the brand.",
+     "seen_in": 21
+    },
+    {
+     "text": "Anything already opened and off in smell or colour goes in the bin, not the fridge.",
+     "seen_in": 21
+    }
+   ]
+  },
+  {
+   "category": "Bassinets & cribs",
+   "recalls": 19,
+   "kind": "inspect",
+   "checks": [
+    {
+     "text": "Look for any incline. Flat on the back is the only sleeping position.",
+     "seen_in": 10
+    },
+    {
+     "text": "Press the mattress down at the edges. A gap at the side is where an infant wedges.",
+     "seen_in": 7
+    }
+   ]
+  },
+  {
+   "category": "Magnet toys & building sets",
+   "recalls": 19,
+   "kind": "inspect",
+   "checks": [
+    {
+     "text": "Two swallowed magnets pull together through the gut and need surgery. Count the pieces after play.",
+     "seen_in": 18
+    },
+    {
+     "text": "Twist and pull each piece. Loose magnets are what CPSC cites again and again here.",
+     "seen_in": 12
+    },
+    {
+     "text": "Check the magnet is stronger than a fridge magnet. That strength is what makes swallowing them surgical.",
+     "seen_in": 5
+    }
+   ]
+  },
+  {
+   "category": "Baby loungers",
+   "recalls": 15,
+   "kind": "inspect",
+   "checks": [
+    {
+     "text": "Look at the side height. Low sides are the single most repeated defect in this category.",
+     "seen_in": 13
+    },
+    {
+     "text": "Look at the foot end. An open end is where an infant slides out or gets caught.",
+     "seen_in": 10
+    },
+    {
+     "text": "Press the pad. A thick, soft pad is what CPSC keeps citing.",
+     "seen_in": 9
+    }
+   ]
+  },
+  {
+   "category": "High chairs & boosters",
+   "recalls": 14,
+   "kind": "inspect",
+   "checks": [
+    {
+     "text": "Pull on the crotch strap. It should be attached to the chair itself, not lying loose on the seat.",
+     "seen_in": 6
+    },
+    {
+     "text": "Look at the gap between the seat and the tray, and beside the seat. A head can fit into it.",
+     "seen_in": 5
+    },
+    {
+     "text": "A high chair is not a bed. If it reclines and is sold for sleeping, that is the recall pattern.",
+     "seen_in": 3
+    }
+   ]
+  },
+  {
+   "category": "Baby carriers & swings",
+   "recalls": 14,
+   "kind": "inspect",
+   "checks": [
+    {
+     "text": "A swing is not a bed. Recline plus infant sleep is the most repeated defect in this category.",
+     "seen_in": 8
+    },
+    {
+     "text": "For a carrier or sling, pull hard on the seams and buckles before your baby is in it.",
+     "seen_in": 4
+    },
+    {
+     "text": "Check for loose fabric that can form a loop near the head or neck.",
+     "seen_in": 2
+    }
+   ]
+  },
+  {
+   "category": "Safety gates",
+   "recalls": 10,
+   "kind": "inspect",
+   "checks": [
+    {
+     "text": "Kneel down and look at the gap under the gate. A toddler's body can fit through a gap you would call small.",
+     "seen_in": 10
+    },
+    {
+     "text": "Check the gap between the gate and the wall, and any pet door opening.",
+     "seen_in": 4
+    },
+    {
+     "text": "Push the gate after it clicks. The lock should hold, not just sound like it did.",
+     "seen_in": 1
+    }
+   ]
+  },
+  {
+   "category": "Strollers & car seat gear",
+   "recalls": 10,
+   "kind": "inspect",
+   "checks": [
+    {
+     "text": "If it is an adapter, confirm it is made for your exact model.",
+     "seen_in": 6
+    },
+    {
+     "text": "Pull each buckle after clicking it.",
+     "seen_in": 4
+    },
+    {
+     "text": "Check the folding joints and hinges near your child's fingers.",
+     "seen_in": 1
+    }
+   ]
+  },
+  {
+   "category": "Toddler towers & step stools",
+   "recalls": 9,
+   "kind": "inspect",
+   "checks": [
+    {
+     "text": "Push it from the side while it is empty. If it rocks or folds, it will do it with your child on it.",
+     "seen_in": 8
+    },
+    {
+     "text": "Look at the openings on the front, back and sides. A child's body can slip through them.",
+     "seen_in": 5
+    },
+    {
+     "text": "Press down hard on the standing platform. It should not shift or loosen.",
+     "seen_in": 2
+    }
+   ]
+  },
+  {
+   "category": "Baby wipes",
+   "recalls": 9,
+   "kind": "lot",
+   "checks": [
+    {
+     "text": "Wipe recalls are almost always bacterial or mould contamination, which you may smell before you see.",
+     "seen_in": 9
+    },
+    {
+     "text": "Keep the pack code until the pack is finished.",
+     "seen_in": 9
+    },
+    {
+     "text": "An off odour or discoloration is a reason to stop using that pack.",
+     "seen_in": 9
+    }
+   ]
+  },
+  {
+   "category": "Infant walkers & bouncers",
+   "recalls": 7,
+   "kind": "inspect",
+   "checks": [
+    {
+     "text": "Check the brakes and stair-edge stop if it has wheels.",
+     "seen_in": 5
+    },
+    {
+     "text": "Check the leg openings. Wide openings are what CPSC cites here.",
+     "seen_in": 2
+    }
+   ]
+  },
+  {
+   "category": "Baby bath seats & tubs",
+   "recalls": 7,
+   "kind": "inspect",
+   "checks": [
+    {
+     "text": "Set it in the empty tub and push it from the side. Every single recall here is a seat that tips while in use.",
+     "seen_in": 7
+    },
+    {
+     "text": "A bath seat is not a reason to step away. Drowning is what CPSC cites at the end of every one of these.",
+     "seen_in": 7
+    },
+    {
+     "text": "Look at the leg openings. A baby can slip down until the body is caught.",
+     "seen_in": 3
+    }
+   ]
+  },
+  {
+   "category": "Crib & playard mattresses",
+   "recalls": 7,
+   "kind": "inspect",
+   "checks": [
+    {
+     "text": "Press the edges once it is in the crib. No gap should be left at the sides.",
+     "seen_in": 7
+    },
+    {
+     "text": "Measure the thickness. Failing the thickness test is what both recalls in this category cite.",
+     "seen_in": 4
+    },
+    {
+     "text": "Check the warning label is actually on it. Missing labels came up in both.",
+     "seen_in": 3
+    }
+   ]
+  },
+  {
+   "category": "Teethers & pacifier clips",
+   "recalls": 7,
+   "kind": "inspect",
+   "checks": [
+    {
+     "text": "Pull on every attached part. Small pieces that detach are the pattern here.",
+     "seen_in": 6
+    }
+   ]
+  },
+  {
+   "category": "Baby sunscreen",
+   "recalls": 7,
+   "kind": "lot",
+   "checks": [
+    {
+     "text": "Photograph the lot number on the tube.",
+     "seen_in": 7
+    },
+    {
+     "text": "Recalls in this category have been about contamination found in specific batches.",
+     "seen_in": 7
+    },
+    {
+     "text": "Keep the packaging until the tube is finished.",
+     "seen_in": 7
+    }
+   ]
+  },
+  {
+   "category": "Nursing pillows",
+   "recalls": 2,
+   "kind": "inspect",
+   "checks": [
+    {
+     "text": "A nursing pillow is for feeding, never for sleeping.",
+     "seen_in": 2
+    },
+    {
+     "text": "Never leave a baby resting on it unattended.",
+     "seen_in": 2
+    }
+   ]
+  }
+ ]
+}

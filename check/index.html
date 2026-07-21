@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Check what's in your home — TinySafe</title>
-<meta name="description" content="Pick what you use — gear, formula, baby food, medicine. We'll email you the moment something in that category is recalled.">
+<title>Before it comes home, give it one look — TinySafe</title>
+<meta name="description" content="Tell us what you're using and we'll show you the three things worth checking, drawn from what actually keeps going wrong. About thirty seconds.">
 <meta name="robots" content="noindex">
 <link rel="canonical" href="https://tinysafe.app/check">
 
@@ -13,16 +13,16 @@
      few hundred KB or platforms silently fall back to a blank grey box. -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://tinysafe.app/check">
-<meta property="og:title" content="405 baby products have been recalled. Do you own one?">
-<meta property="og:description" content="214 of them in the last 12 months — loungers, cribs and high chairs, plus formula, baby food and children's medicine. Pick what's in your home and get an email the moment something in that category is recalled.">
+<meta property="og:title" content="Before it comes home, give it one look.">
+<meta property="og:description" content="We read every recall notice so you don't have to. Tell us what you're using and we'll show you the three things worth checking. About thirty seconds.">
 <meta property="og:image" content="https://tinysafe.app/check/og.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="TinySafe — 405 baby products have been recalled. Do you own one? Gear, formula and medicine, 214 in the last 12 months">
+<meta property="og:image:alt" content="TinySafe — before it comes home, give it one look. Three things worth checking, drawn from real recalls">
 <meta property="og:site_name" content="TinySafe">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="405 baby products have been recalled. Do you own one?">
-<meta name="twitter:description" content="214 of them in the last 12 months — gear, formula, medicine and more. Check what's in your home.">
+<meta name="twitter:title" content="Before it comes home, give it one look.">
+<meta name="twitter:description" content="Tell us what you're using and we'll show you the three things worth checking.">
 <meta name="twitter:image" content="https://tinysafe.app/check/og.jpg">
 <style>
 :root{
@@ -108,8 +108,19 @@ h1 .glow{background:linear-gradient(120deg,var(--gold-deep),var(--gold));
 .payoff-n{font-size:26px;font-weight:600;color:var(--navy-deep);letter-spacing:-.5px;
   line-height:1.2;margin:0 0 6px}
 .payoff-p{font-size:14.5px;color:var(--navy);margin:0}
-.pattern{margin:12px 0 0;padding:11px 0 0;border-top:1px solid var(--line);
+.pattern{margin:14px 0 0;padding:13px 0 0;border-top:1px solid var(--line);
   font-size:14px;color:var(--navy)}
+.ck-grp{margin:0 0 18px}
+.ck-grp:last-child{margin-bottom:0}
+.ck-h{font-size:13px;font-weight:600;color:var(--navy-deep);margin:0 0 9px;
+  letter-spacing:.2px}
+.ck{display:flex;gap:11px;align-items:flex-start;margin:0 0 9px;
+  font-size:14.5px;line-height:1.55;color:var(--navy)}
+.ck-n{flex:none;width:22px;height:22px;border-radius:50%;margin-top:1px;
+  background:linear-gradient(135deg,var(--gold) 0%,var(--gold-deep) 100%);
+  color:#fff;font-size:12px;font-weight:600;
+  display:flex;align-items:center;justify-content:center}
+.ck-src{font-size:12px;color:var(--muted);margin:8px 0 0}
 .pattern b{color:var(--navy-deep);font-weight:600}
 .locked{font-size:13px;color:var(--muted);margin:10px 0 0}
 
@@ -165,17 +176,17 @@ input:focus{outline:2px solid var(--gold);outline-offset:1px;border-color:transp
   </div>
 
   <main id="form">
-    <h1 class="reveal r1"><span id="scopeTotal">405</span> baby products have been recalled. <span class="glow">Do you own one?</span></h1>
-    <p class="sub reveal r2"><b id="last12">214</b> of them in the last 12 months. Pick what's in your home and we'll email you the moment something in that category is recalled.</p>
+    <h1 class="reveal r1">Before it comes home,<br><span class="glow">give it one look.</span></h1>
+    <p class="sub reveal r2">We read every recall notice so you don't have to. Tell us what you're using and we'll show you the three things worth checking. Takes about thirty seconds.</p>
 
     <section class="strip reveal r3" id="strip"></section>
 
 
     <section class="step">
-      <p class="step-n"><i>01</i> &nbsp;What you use</p>
+      <p class="step-n"><i>01</i> &nbsp;What are you using?</p>
       <div id="groups"></div>
       <div class="payoff" id="payoff" hidden>
-        <p class="payoff-h">What's on record</p>
+        <p class="payoff-h">Three things worth checking</p>
         <p class="payoff-n" id="payoffN"></p>
         <p class="payoff-p" id="payoffP"></p>
         <div class="pattern" id="pattern" hidden></div>
@@ -184,38 +195,38 @@ input:focus{outline:2px solid var(--gold);outline-offset:1px;border-color:transp
     </section>
 
     <section class="step" id="stageStep" hidden>
-      <p class="step-n"><i>02</i> &nbsp;Your child's stage</p>
+      <p class="step-n"><i>02</i> &nbsp;How old is your little one?</p>
       <div class="pills" id="stages" role="group" aria-label="Child stage"></div>
     </section>
 
     <section class="step" id="emailStep" hidden>
-      <p class="step-n"><i>03</i> &nbsp;Where to send alerts</p>
+      <p class="step-n"><i>03</i> &nbsp;Want us to keep watching?</p>
       <input id="email" type="email" inputmode="email" autocomplete="email" placeholder="you@email.com" aria-label="Email address">
-      <button class="submit" id="submit" disabled>Turn on recall alerts</button>
+      <button class="submit" id="submit" disabled>Keep watching for me</button>
       <p class="err" id="err" hidden></p>
-      <p class="fine">No spam. Only what you picked. Unsubscribe anytime.</p>
+      <p class="fine">Only the things you picked. Nothing else, ever.</p>
     </section>
   </main>
 
   <section class="done" id="done" hidden>
-    <h2>You're on the list.</h2>
-    <p>We check <b id="doneN">your categories</b> against CPSC and FDA feeds every morning and email you if something new is recalled.</p>
+    <h2>We've got it from here.</h2>
+    <p>We'll keep reading the notices for <b id="doneN">your categories</b>. If something turns up, you'll hear it from us first.</p>
     <div class="up">
       <p class="up-h">Coming to the App Store</p>
       <ul>
-        <li>Push alerts in minutes, not the next morning</li>
-        <li>Match your exact brand and model, not just the category</li>
-        <li>See every recall on record, not just the count</li>
-        <li>Add and remove items anytime</li>
+        <li>Check anything by brand and model, right in the shop</li>
+        <li>Your whole nursery in one place</li>
+        <li>Know the moment something changes, not the next morning</li>
+        <li>Every past recall behind each check</li>
       </ul>
       <p class="up-p">You'll get the download link the day it's live.</p>
     </div>
   </section>
 
   <footer class="foot">
-    U.S. CPSC gear recalls since <span id="gearFrom">2024</span> and FDA feeding &amp; care
-    recalls from the last <span id="feedYears">3</span> years. Hospital and clinical
-    recalls are not listed. Updated daily · <span id="updated"></span><br>
+    Every check on this page comes from something the U.S. CPSC actually cited, across
+    <span id="scopeTotal2">405</span> recalls. We'll never tell you a product is safe.
+    We'll tell you what to look at. Updated daily · <span id="updated"></span><br>
     <a href="/">tinysafe.app</a>
   </footer>
 </div>
@@ -225,7 +236,8 @@ input:focus{outline:2px solid var(--gold);outline-offset:1px;border-color:transp
    CONFIG — the only thing you need to change
    ============================================================ */
 const FORM_ENDPOINT = "https://hook.us2.make.com/9c9dvgj2rerejpjq9ema7xfs4wr5bnq9";
-const DATA_URL      = "/data/check.json";  // generated by build_check_data.py
+const DATA_URL      = "/data/check.json";   // generated by build_check_data.py
+const CHECKS_URL    = "/data/checks.json";  // generated by build_checks.py
 
 const STAGES = ["Newborn","Baby","Toddler","Preschool"];
 
@@ -247,6 +259,7 @@ const FALLBACK = {
 };
 
 let DATA = FALLBACK;
+let CHECKS = {};
 const picked = new Set();
 let stage = null;
 const $ = id => document.getElementById(id);
@@ -300,34 +313,33 @@ function renderPayoff(){
   const box=$("payoff");
   if(!picked.size){ box.hidden=true; return; }
   box.hidden=false;
-  const chosen = allCats().filter(c=>picked.has(c.name));
-  const known  = chosen.filter(c=>typeof c.count==="number");
 
-  if(!known.length){
-    $("payoffN").textContent = `${chosen.length} categor${chosen.length>1?"ies":"y"} on watch`;
-    $("payoffP").textContent = "We check these against the CPSC and FDA feeds every morning.";
+  const chosen = allCats().filter(c=>picked.has(c.name));
+  // CHECKS is keyed by category name. Only categories where CPSC cited the same
+  // thing more than once have entries — we never invent a check to fill a slot.
+  const withChecks = chosen.filter(c => CHECKS[c.name] && CHECKS[c.name].checks.length);
+
+  if(!withChecks.length){
+    $("payoffN").textContent = "We'll keep reading for these";
+    $("payoffP").textContent = "Nothing has repeated often enough here for us to hand you a checklist yet. If that changes, you'll hear it from us.";
     $("pattern").hidden=true; $("locked").hidden=true;
     return;
   }
 
-  const total = known.reduce((s,c)=>s+c.count,0);
-  $("payoffN").textContent = `${total} recall${total>1?"s":""} on record`;
-  $("payoffP").textContent = `across the ${chosen.length} categor${chosen.length>1?"ies":"y"} you picked.`;
+  // Lead with the ritual, not the count. One category = one short list.
+  $("payoffN").textContent = "Three things worth checking";
+  $("payoffP").textContent = "These are what CPSC cited over and over. Look at these, and you've done the part that matters.";
 
-  // The strongest thing we can show: the repeating defect in the worst category.
-  // Only GEAR categories carry a defect pattern — FDA feeding & care records do
-  // not name a mechanism, so they must never be used for this sentence.
-  const withPattern = known.filter(c=>c.top_hazard && c.top_hazard_count>1);
-  const worst = withPattern.slice().sort((a,b)=>b.count-a.count)[0];
-  if(worst){
-    $("pattern").hidden=false;
-    $("pattern").innerHTML =
-      `Most of them repeat the same defect. In <b>${esc(worst.name)}</b>, ` +
-      `${worst.top_hazard_count} of ${worst.count} were recalled for <b>${esc(worst.top_hazard)}</b>.`;
-  } else { $("pattern").hidden=true; }
+  $("pattern").hidden=false;
+  $("pattern").innerHTML = withChecks.map(cat=>{
+    const inf=CHECKS[cat.name];
+    return `<div class="ck-grp"><p class="ck-h">${esc(cat.name)}</p>` +
+      inf.checks.map((c,i)=>`<div class="ck"><span class="ck-n">${i+1}</span><span>${esc(c.text)}</span></div>`).join("") +
+      `<p class="ck-src">from ${inf.recalls} recall${inf.recalls>1?"s":""} on record</p></div>`;
+  }).join("");
 
   $("locked").hidden=false;
-  $("locked").textContent = "Which products they were is in the app.";
+  $("locked").textContent = "Checked them? Bring it home.";
 }
 
 function gate(){
@@ -356,7 +368,7 @@ $("groups").addEventListener("click",e=>{
 $("email").addEventListener("input",gate);
 
 $("submit").addEventListener("click",async()=>{
-  const btn=$("submit"); btn.disabled=true; btn.textContent="Turning on…";
+  const btn=$("submit"); btn.disabled=true; btn.textContent="Saving…";
   const u=utm();
   // form-urlencoded on purpose: it is a "simple request", so the browser sends
   // no CORS preflight (a JSON content-type would, and a missing preflight
@@ -384,7 +396,7 @@ $("submit").addEventListener("click",async()=>{
     $("doneN").textContent=`${picked.size} categor${picked.size>1?"ies":"y"}`;
     window.scrollTo(0,0);
   }catch(err){
-    btn.disabled=false; btn.textContent="Turn on recall alerts";
+    btn.disabled=false; btn.textContent="Keep watching for me";
     $("err").hidden=false;
     $("err").textContent="That didn't go through. Check your connection and try again.";
   }
@@ -394,6 +406,10 @@ $("submit").addEventListener("click",async()=>{
   if(DATA_URL){
     try{ const r=await fetch(DATA_URL); if(r.ok) DATA=await r.json(); }catch(e){}
   }
+  try{
+    const r=await fetch(CHECKS_URL);
+    if(r.ok){ const j=await r.json(); (j.categories||[]).forEach(c=>{ CHECKS[c.category]=c; }); }
+  }catch(e){}
   if(DATA.total)  $("scopeTotal").textContent=DATA.total;
   if(DATA.last12) $("last12").textContent=DATA.last12;
   if(DATA.updated) $("updated").textContent="last recall "+DATA.updated;
