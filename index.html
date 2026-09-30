@@ -49,398 +49,266 @@
  ]
 }
 </script>
+
+<script>window.va=window.va||function(){(window.vaq=window.vaq||[]).push(arguments);};</script><script defer src="/_vercel/insights/script.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet">
 <style>
-  :root{
-    --sky1:#dceffa; --sky2:#bfe0f3; --sky3:#cfe8f7;
-    --navy:#2a5f8a; --navy-deep:#1d456a; --muted:#6b95b8;
-    --gold:#F5A623; --gold-deep:#e08c10;
-    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-  }
-  *{box-sizing:border-box; margin:0; padding:0;}
-  html{scroll-behavior:smooth;}
-  body{
-    font-family:var(--sans); color:var(--navy); line-height:1.6; overflow-x:hidden;
-    background:linear-gradient(180deg,var(--sky1) 0%,var(--sky2) 55%,var(--sky3) 100%);
-    background-attachment:fixed; min-height:100vh; -webkit-font-smoothing:antialiased;
-  }
-  .sun{
-    position:fixed; top:-280px; left:50%; transform:translateX(-50%);
-    width:820px; height:820px; border-radius:50%; pointer-events:none; z-index:0;
-    background:radial-gradient(circle,rgba(255,222,160,0.5) 0%,rgba(255,215,150,0.22) 35%,rgba(255,225,170,0) 62%);
-    filter:blur(10px);
-  }
-  .wrap{position:relative; z-index:5; max-width:960px; margin:0 auto; padding:0 28px;}
+:root{
+  --sky1:#dceffa; --sky2:#c4e2f4; --sky3:#d6ebf8;
+  --navy:#2a5f8a; --ink:#173a5c; --ink-deep:#0f2c47;
+  --muted:#6b8fae; --gold:#e08c10; --gold-soft:#f5a623;
+  --card:rgba(255,255,255,.62); --card-solid:#ffffff;
+  --line:rgba(23,58,92,.12);
+  --serif:"Fraunces",Georgia,"Times New Roman",serif;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+*{box-sizing:border-box; margin:0; padding:0;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:var(--sans); color:var(--navy); line-height:1.65; overflow-x:hidden;
+  background:
+    radial-gradient(1200px 600px at 50% -8%, rgba(255,222,160,.28), rgba(255,222,160,0) 60%),
+    linear-gradient(180deg, var(--sky1) 0%, var(--sky2) 52%, var(--sky3) 100%);
+  background-attachment:fixed; min-height:100vh;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:1080px; margin:0 auto; padding:0 24px;}
+.narrow{max-width:660px;}
 
-  /* HERO */
-  header{text-align:center; padding:108px 28px 24px; position:relative; z-index:5;}
-  .badge{width:84px; height:84px; border-radius:21px; margin:0 auto 30px; position:relative; overflow:hidden; box-shadow:0 0 30px rgba(245,166,35,0.3), 0 14px 36px rgba(220,150,40,0.22), inset 0 1px 2px rgba(255,255,255,0.4); animation:floatBadge 7s ease-in-out infinite;}
-  @keyframes floatBadge{0%,100%{transform:translateY(0);}50%{transform:translateY(-7px);}}
-  .badge img{width:100%; height:100%; object-fit:cover; display:block;}
-  .eyebrow{font-size:12px; font-weight:600; letter-spacing:2.8px; text-transform:uppercase; color:var(--muted);}
-  h1{font-weight:600; font-size:54px; line-height:1.1; letter-spacing:-1.3px; color:var(--navy-deep); margin:24px 0 16px;}
-  h1 .glow{background:linear-gradient(120deg,var(--gold-deep),var(--gold)); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent;}
-  .tagline{font-weight:400; font-size:18px; color:var(--navy); max-width:440px; margin:0 auto;}
-  .productline{font-weight:400; font-size:17px; color:var(--navy); max-width:480px; margin:18px auto 0; line-height:1.6;}
-  .productline .glow{font-weight:600; background:linear-gradient(120deg,var(--gold-deep),var(--gold)); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent;}
-  .productline strong{color:var(--navy-deep); font-weight:600;}
-  .hero-sub{font-weight:400; font-size:16.5px; color:var(--navy); max-width:500px; margin:18px auto 0; line-height:1.6;}
-  .hero-sub strong{color:var(--navy-deep); font-weight:600;}
+/* ---------- top bar ---------- */
+.top{display:flex; align-items:center; justify-content:space-between; padding:22px 0 0;}
+.brand{display:flex; align-items:center; gap:10px; text-decoration:none;}
+.brand img{width:34px; height:34px; border-radius:9px;}
+.brand span{font-family:var(--serif); font-weight:600; font-size:21px; color:var(--ink-deep); letter-spacing:-.01em;}
+.brand span em{font-style:normal; color:var(--gold);}
+.top nav{display:flex; gap:26px;}
+.top nav a{font-size:14.5px; color:var(--navy); text-decoration:none; font-weight:500; opacity:.85;}
+.top nav a:hover{opacity:1; color:var(--ink-deep);}
+@media(max-width:620px){ .top nav{gap:16px;} .top nav a.hide-sm{display:none;} }
 
-  /* elegant entrance — staggered fade-up */
-  .reveal{opacity:0; transform:translateY(14px); animation:revealUp 1s cubic-bezier(.2,.7,.2,1) forwards;}
-  .r1{animation-delay:.15s;}
-  .r2{animation-delay:.35s;}
-  .r3{animation-delay:.6s;}
-  .r4{animation-delay:.85s;}
-  @keyframes revealUp{to{opacity:1; transform:translateY(0);}}
+/* ---------- hero ---------- */
+.hero{padding:76px 0 30px; text-align:center;}
+.kicker{font-size:15px; color:var(--navy); font-weight:500; margin-bottom:22px; opacity:.9;}
+.hero h1{
+  font-family:var(--serif); font-weight:400; color:var(--ink-deep);
+  font-size:clamp(38px, 6.2vw, 60px); line-height:1.06; letter-spacing:-.02em;
+  max-width:15ch; margin:0 auto;
+}
+.hero h1 .miss{font-style:italic; color:var(--gold);}
+.hero .lede{
+  font-size:19px; color:var(--navy); line-height:1.6;
+  max-width:33ch; margin:26px auto 0;
+}
+.hero .lede b{color:var(--ink); font-weight:600;}
 
-  /* gold shimmer — a slow light sweep across the gold text, once settled */
-  .shimmer{
-    background:linear-gradient(110deg,var(--gold-deep) 20%,var(--gold) 40%,#fff3d6 50%,var(--gold) 60%,var(--gold-deep) 80%);
-    background-size:220% 100%;
-    -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent;
-    animation:goldShimmer 6.5s ease-in-out 1.4s infinite;
-  }
-  @keyframes goldShimmer{
-    0%,100%{background-position:140% 0;}
-    50%{background-position:-40% 0;}
-  }
-  .cta{margin:36px 0 8px;}
-  .store{
-    display:inline-flex; align-items:center; gap:11px; text-decoration:none;
-    background:linear-gradient(135deg,#2a5f8a 0%,#1d456a 100%); color:#fff;
-    font-weight:500; font-size:16px; letter-spacing:0.2px; padding:16px 32px; border-radius:14px;
-    box-shadow:0 12px 30px rgba(29,69,106,0.32), inset 0 1px 0 rgba(255,255,255,0.18);
-    transition:transform .3s cubic-bezier(.2,.8,.2,1), box-shadow .3s ease;
-  }
-  .store:hover{transform:translateY(-2px); box-shadow:0 18px 40px rgba(29,69,106,0.42);}
-  .store svg{width:19px; height:19px;}
-  .note{display:block; font-size:13px; color:var(--muted); margin-top:14px;}
+/* ---------- signup ---------- */
+.signup{max-width:440px; margin:34px auto 0;}
+.signup form{display:flex; gap:9px;}
+.signup input{
+  flex:1; padding:15px 18px; border-radius:14px; border:1px solid var(--line);
+  background:var(--card-solid); font-size:15.5px; color:var(--ink-deep); outline:none;
+  font-family:var(--sans); transition:border-color .15s, box-shadow .15s;
+}
+.signup input::placeholder{color:#9fbcd6;}
+.signup input:focus{border-color:var(--gold); box-shadow:0 0 0 3px rgba(224,140,16,.14);}
+.signup button{
+  background:linear-gradient(135deg, var(--gold-soft), var(--gold)); color:#fff;
+  font-weight:600; font-size:15.5px; padding:15px 26px; border-radius:14px; border:none;
+  cursor:pointer; white-space:nowrap; font-family:var(--sans);
+  box-shadow:0 10px 24px rgba(224,140,16,.26); transition:transform .12s, box-shadow .12s;
+}
+.signup button:hover{transform:translateY(-1px); box-shadow:0 14px 30px rgba(224,140,16,.32);}
+.signup .fine{font-size:13px; color:var(--muted); margin-top:13px; text-align:center;}
+@media(max-width:460px){ .signup form{flex-direction:column;} .signup button{width:100%;} }
 
-  /* VIDEO */
-  .video-sec{padding:48px 0 24px;}
-  /* video section head */
-  .video-head, .grandma-sec .sec-head{text-align:center; margin-bottom:30px;}
-  .video-head h2{font-weight:600; font-size:29px; color:var(--navy-deep); letter-spacing:-0.6px; margin-bottom:8px;}
-  .video-head p{font-size:15px; color:var(--muted);}
-  .alert-line-top{font-size:16.5px !important; font-weight:600; color:var(--navy) !important; line-height:1.5; max-width:440px; margin:0 auto;}
-  .video-label{text-align:center; font-size:12.5px; color:var(--muted); letter-spacing:0.8px; text-transform:uppercase; font-weight:600; margin-top:20px;}
-  .video-tagline{text-align:center; font-size:16px; color:var(--navy-deep); font-weight:600; line-height:1.5; max-width:440px; margin:14px auto 0; letter-spacing:-0.2px;}
-  .video-cta-wrap{text-align:center; margin-top:24px;}
-  .alert-em{color:var(--gold-deep);}
-  .alert-cta{display:inline-block; background:linear-gradient(135deg,#F5A623,#e08c10); color:#3a2400; font-weight:700; font-size:16px; padding:15px 34px; border-radius:14px; text-decoration:none; box-shadow:0 12px 30px rgba(224,140,16,0.32); transition:transform .12s;}
-  .alert-cta:hover{transform:translateY(-2px);}
+/* ---------- trust strip ---------- */
+.trust{
+  display:flex; align-items:center; justify-content:center; gap:34px; flex-wrap:wrap;
+  margin:54px auto 0; padding:20px 30px; max-width:680px;
+  background:var(--card); border:1px solid var(--line); border-radius:18px;
+  backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px);
+}
+.trust div{text-align:center;}
+.trust .n{font-family:var(--serif); font-weight:600; font-size:24px; color:var(--ink-deep); line-height:1;}
+.trust .l{font-size:13px; color:var(--muted); margin-top:5px;}
+@media(max-width:520px){ .trust{gap:20px; padding:18px 20px;} .trust .n{font-size:20px;} }
 
-  /* TRUST STATS BAR */
-  .trust-bar{display:flex; align-items:center; justify-content:center; gap:8px; padding:22px 18px; margin:28px auto 8px; max-width:560px;
-    background:linear-gradient(155deg,rgba(255,255,255,0.6),rgba(255,255,255,0.4)); border-radius:20px;
-    backdrop-filter:blur(20px) saturate(150%); border:1px solid rgba(255,255,255,0.7);
-    box-shadow:0 10px 30px rgba(110,150,190,0.14);}
-  .trust-item{flex:1; text-align:center; display:flex; flex-direction:column; gap:3px;}
-  .trust-num{font-size:21px; font-weight:700; color:var(--gold-deep); letter-spacing:-0.4px;}
-  .trust-label{font-size:12px; color:var(--muted); font-weight:500;}
-  .trust-divider{width:1px; height:34px; background:rgba(120,160,200,0.25);}
+/* ---------- section rhythm ---------- */
+section{padding:62px 0;}
+.sec-lead{text-align:center; max-width:34ch; margin:0 auto 44px;}
+.sec-lead h2{
+  font-family:var(--serif); font-weight:400; color:var(--ink-deep);
+  font-size:clamp(28px, 4.4vw, 40px); line-height:1.12; letter-spacing:-.015em;
+}
+.sec-lead p{font-size:17px; color:var(--navy); margin-top:16px; line-height:1.6;}
 
-  /* REAL RECALLS — gold glow cards */
-  .recalls-sec{padding:54px 0 30px;}
-  .recall-cards{display:grid; grid-template-columns:1fr 1fr; gap:13px; max-width:620px; margin:0 auto; padding:0 4px;}
-  .rc{background:#293847; border-radius:16px; padding:16px 17px;
-    box-shadow:0 0 0 1.5px rgba(240,176,60,0.4), 0 8px 22px rgba(224,140,16,0.16);}
-  .rc-top{display:flex; flex-wrap:wrap; gap:6px; margin-bottom:11px;}
-  .rc-hazard{font-size:11px; font-weight:600; padding:4px 10px; border-radius:999px; background:#5a2020; color:#f0a0a0;}
-  .rc-cat{font-size:11px; font-weight:600; padding:4px 10px; border-radius:999px; background:#34404f; color:#9fb2c4;}
-  .rc-name{font-size:14.5px; font-weight:600; color:#fbe2a8; line-height:1.35; margin-bottom:8px;}
-  .rc-date{font-size:12px; color:#8fa3b6;}
-  .recalls-foot{text-align:center; font-size:16px; font-weight:600; color:var(--navy-deep); margin-top:26px; letter-spacing:-0.3px;}
-  .rc{display:block; text-decoration:none; transition:transform .12s, box-shadow .12s;}
-  .rc:hover{transform:translateY(-2px); box-shadow:0 0 0 1.5px rgba(240,176,60,0.6), 0 12px 26px rgba(224,140,16,0.22);}
-  .recalls-cta{text-align:center; margin-top:22px;}
-  .see-all{display:inline-block; background:linear-gradient(135deg,#2a5f8a,#1d456a); color:#fff; font-weight:600; font-size:15px; padding:14px 30px; border-radius:13px; text-decoration:none; box-shadow:0 10px 26px rgba(29,69,106,0.28); transition:transform .12s;}
-  .see-all:hover{transform:translateY(-2px);}
+/* ---------- insight cards (asymmetric, not identical) ---------- */
+.cards{display:grid; grid-template-columns:1fr 1fr; gap:20px; max-width:900px; margin:0 auto; align-items:stretch;}
+.card{
+  display:flex; flex-direction:column; text-decoration:none; position:relative; overflow:hidden;
+  background:var(--card-solid); border:1px solid var(--line); border-radius:22px;
+  padding:30px 30px 34px; transition:transform .18s, box-shadow .18s;
+  box-shadow:0 12px 30px rgba(23,58,92,.07);
+}
+.card:hover{transform:translateY(-3px); box-shadow:0 20px 44px rgba(23,58,92,.12);}
+.card .tag{font-size:12.5px; color:var(--gold); font-weight:600; letter-spacing:.02em;}
+.card h3{font-family:var(--serif); font-weight:500; font-size:23px; color:var(--ink-deep); line-height:1.2; margin:12px 0 10px; letter-spacing:-.01em;}
+.card p{font-size:15px; color:var(--navy); line-height:1.55;}
+.card .go{display:inline-block; margin-top:auto; padding-top:16px; font-size:14.5px; color:var(--navy); font-weight:600;}
+.card.big{background:linear-gradient(160deg, #fffdf8, #fff6e6); border-color:rgba(224,140,16,.22);}
+.browse-all{text-align:center; margin-top:26px;}
+.browse-all a{font-size:15px; color:var(--navy); font-weight:600; text-decoration:none; border-bottom:1.5px solid rgba(224,140,16,.4); padding-bottom:2px;}
+.browse-all a:hover{color:var(--ink-deep);}
+@media(max-width:680px){ .cards{grid-template-columns:1fr;} }
 
-  /* PERSONALIZED demo — real screenshot */
-  .personal-sec{padding:50px 0 30px;}
-  .personal-img{width:100%; height:100%; object-fit:cover; object-position:top center; display:block;}
+/* ---------- story ---------- */
+.story{
+  max-width:720px; margin:0 auto; text-align:center;
+  background:var(--card); border:1px solid var(--line); border-radius:28px;
+  padding:52px 48px; backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px);
+}
+.story img{width:92px; height:92px; border-radius:50%; object-fit:cover; margin:0 auto 24px; display:block; border:3px solid #fff; box-shadow:0 10px 26px rgba(23,58,92,.16);}
+.story .q{font-family:var(--serif); font-weight:400; font-size:clamp(24px,3.6vw,32px); color:var(--ink-deep); line-height:1.22; letter-spacing:-.015em;}
+.story .body{font-size:16.5px; color:var(--navy); line-height:1.72; margin-top:24px; text-align:left;}
+.story .body p{margin-bottom:14px;}
+.story .sign{font-family:var(--serif); font-style:italic; font-size:16px; color:var(--muted); margin-top:20px; text-align:center;}
+.story details{margin-top:20px;}
+.story summary{list-style:none; cursor:pointer; font-size:14.5px; font-weight:600; color:var(--gold); }
+.story summary::-webkit-details-marker{display:none;}
+.story summary:hover{color:var(--gold-deep);}
+@media(max-width:560px){ .story{padding:38px 26px;} }
 
-  /* phone mockup for vertical 9:16 video */
-  .phone-mock{display:flex; justify-content:center; padding:0 24px;}
-  .phone-frame{
-    position:relative; width:270px; border-radius:42px; padding:11px;
-    background:linear-gradient(155deg,#33485c 0%,#1b2a38 65%,#13202b 100%);
-    border-top:1px solid rgba(255,255,255,0.14);
-    box-shadow:0 40px 80px rgba(40,80,120,0.3), 0 14px 32px rgba(40,80,120,0.2), inset 0 1px 3px rgba(255,255,255,0.14);
-  }
-  .phone-notch{position:absolute; top:11px; left:50%; transform:translateX(-50%); width:38%; height:22px; background:#13202b; border-radius:0 0 14px 14px; z-index:3;}
-  .phone-screen{position:relative; border-radius:32px; overflow:hidden; aspect-ratio:9/19.5; background:linear-gradient(180deg,#e3f1fc,#cae4f7);}
-  .phone-screen iframe, .phone-screen video{width:100%; height:100%; border:none; object-fit:cover; display:block;}
-  .vid-placeholder{width:100%; height:100%; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:14px;
-    background:linear-gradient(160deg,rgba(255,255,255,0.5),rgba(200,228,247,0.4));}
-  .play{width:64px; height:64px; border-radius:50%; background:linear-gradient(135deg,#2a5f8a,#1d456a); display:flex; align-items:center; justify-content:center; box-shadow:0 0 26px rgba(245,166,35,0.35), 0 12px 28px rgba(29,69,106,0.4);}
-  .play svg{width:24px; height:24px; margin-left:3px;}
-  .vlabel{font-size:13px; color:var(--muted); text-align:center; line-height:1.4;}
+/* ---------- final cta ---------- */
+.final{text-align:center; padding:70px 0 54px;}
+.final h2{font-family:var(--serif); font-weight:400; font-size:clamp(30px,5vw,46px); color:var(--ink-deep); line-height:1.08; letter-spacing:-.02em; max-width:16ch; margin:0 auto;}
+.final p{font-size:17px; color:var(--navy); max-width:34ch; margin:20px auto 0;}
 
-  /* Grandma section */
-  .grandma-sec{padding:50px 0 30px;}
-  .grandma-tag{font-size:15px; color:var(--muted); margin-top:10px; max-width:440px; margin-left:auto; margin-right:auto;}
-  .grandma-placeholder{background:linear-gradient(160deg,rgba(255,243,214,0.55),rgba(255,210,140,0.35));}
+/* ---------- footer ---------- */
+footer{text-align:center; padding:40px 24px 60px; color:var(--muted); font-size:13px;}
+footer .links{margin-bottom:14px;}
+footer a{color:var(--navy); text-decoration:none; margin:0 11px; font-weight:500;}
+footer a:hover{color:var(--ink-deep);}
+.disclaimer{max-width:680px; margin:0 auto; font-size:12px; line-height:1.6; opacity:.85;}
 
-
-
-
-  .vlabel{font-size:13.5px; color:var(--muted); letter-spacing:0.3px;}
-
-  /* 3 STEPS — label only */
-  .steps-sec{padding:48px 0 28px;}
-  .steps{display:grid; grid-template-columns:repeat(3,1fr); gap:16px;}
-  .step{
-    text-align:center; padding:30px 20px; border-radius:22px;
-    background:linear-gradient(155deg,rgba(255,255,255,0.55),rgba(255,255,255,0.38));
-    backdrop-filter:blur(28px) saturate(150%); -webkit-backdrop-filter:blur(28px) saturate(150%);
-    border-top:1px solid rgba(255,255,255,0.85); border-left:1px solid rgba(255,255,255,0.7);
-    border-right:1px solid rgba(120,160,200,0.16); border-bottom:1px solid rgba(120,160,200,0.2);
-    box-shadow:0 16px 40px rgba(110,150,190,0.15), inset 0 1px 0 rgba(255,255,255,0.8);
-  }
-  .step .si{width:60px; height:60px; border-radius:18px; margin:0 auto 14px; background:linear-gradient(145deg,#fff8ec,#ffe4b4); border-top:1px solid rgba(255,255,255,0.9); display:flex; align-items:center; justify-content:center; box-shadow:0 0 16px rgba(245,166,35,0.28), 0 6px 14px rgba(245,166,35,0.18), inset 0 1px 2px rgba(255,255,255,0.9);}
-  .step .si svg{width:30px; height:30px;}
-  /* step icon motions — subtle, staggered */
-  .si-add svg{animation:siAdd 3.4s ease-in-out infinite;}
-  @keyframes siAdd{0%,100%{transform:scale(1);}50%{transform:scale(1.12);}}
-  .si-check svg{transform-origin:center; animation:siCheck 3.8s ease-in-out infinite;}
-  @keyframes siCheck{0%,100%{transform:scale(1);opacity:1;}45%{transform:scale(0.9);opacity:0.75;}}
-  .si-alert{animation:siBellGlow 3.2s ease-in-out infinite;}
-  .si-alert svg{transform-origin:top center; animation:siBell 3.2s ease-in-out infinite;}
-  @keyframes siBell{0%,72%,100%{transform:rotate(0);}78%{transform:rotate(11deg);}84%{transform:rotate(-9deg);}90%{transform:rotate(6deg);}95%{transform:rotate(-3deg);}}
-  @keyframes siBellGlow{0%,72%,100%{box-shadow:0 0 16px rgba(245,166,35,0.28),0 6px 14px rgba(245,166,35,0.18),inset 0 1px 2px rgba(255,255,255,0.9);}80%{box-shadow:0 0 26px rgba(245,166,35,0.5),0 6px 14px rgba(245,166,35,0.25),inset 0 1px 2px rgba(255,255,255,0.9);}}
-  .step h3{font-size:17px; font-weight:600; color:var(--navy-deep); letter-spacing:-0.3px;}
-
-  /* STORY — short hook + expandable */
-  .story-sec{padding:44px 0 28px;}
-  .story{
-    position:relative; overflow:hidden; max-width:640px; margin:0 auto; text-align:center;
-    background:linear-gradient(155deg,rgba(255,255,255,0.55),rgba(255,255,255,0.38));
-    border-radius:26px; padding:44px 40px;
-    backdrop-filter:blur(28px) saturate(150%); -webkit-backdrop-filter:blur(28px) saturate(150%);
-    border-top:1px solid rgba(255,255,255,0.85); border-left:1px solid rgba(255,255,255,0.7);
-    border-right:1px solid rgba(120,160,200,0.16); border-bottom:1px solid rgba(120,160,200,0.2);
-    box-shadow:0 20px 48px rgba(110,150,190,0.18), inset 0 1px 0 rgba(255,255,255,0.8);
-  }
-  .story::after{content:''; position:absolute; bottom:-50px; left:-40px; width:170px; height:170px; border-radius:50%; background:radial-gradient(circle,rgba(245,166,35,0.1),rgba(245,166,35,0) 70%); pointer-events:none;}
-  .story-photo{width:88px; height:88px; object-fit:cover; border-radius:50%; margin:0 auto 22px; display:block; border:3px solid rgba(255,255,255,0.85); box-shadow:0 10px 28px rgba(110,150,190,0.28), 0 0 0 1px rgba(245,166,35,0.15);}
-  .story-photo{width:88px; height:88px; border-radius:50%; object-fit:cover; margin:0 auto 20px; display:block; border:3px solid rgba(255,255,255,0.9); box-shadow:0 8px 24px rgba(110,150,190,0.28), 0 0 0 1px rgba(245,166,35,0.15);}
-  .story .eyebrow{display:block; margin-bottom:14px;}
-  .story h2{font-weight:600; font-size:30px; color:var(--navy-deep); letter-spacing:-0.7px; line-height:1.18; margin-bottom:18px;}
-  .story .lede{font-size:16.5px; color:var(--navy); line-height:1.65; position:relative; z-index:2;}
-  details{margin-top:8px; position:relative; z-index:2;}
-  details summary{
-    list-style:none; cursor:pointer; display:inline-block; margin-top:16px;
-    font-size:14px; font-weight:600; color:var(--gold-deep); letter-spacing:0.2px;
-  }
-  details summary::-webkit-details-marker{display:none;}
-  details summary::after{content:' →'; transition:transform .2s;}
-  details[open] summary::after{content:' ↑';}
-  details .more{font-size:15.5px; color:var(--navy); line-height:1.7; margin-top:16px; text-align:left;}
-  details .more p{margin-bottom:12px;}
-  details .more .sign{font-size:14px; color:var(--muted); font-style:italic; margin-top:6px;}
-  .story strong{color:var(--navy-deep); font-weight:600;}
-
-  /* FEATURES — title only */
-  .feat-sec{padding:44px 0 28px;}
-  .sec-head{text-align:center; margin-bottom:32px;}
-  .sec-head .eyebrow{display:block; margin-bottom:12px;}
-  .sec-title{font-weight:600; font-size:32px; color:var(--navy-deep); letter-spacing:-0.7px;}
-  .feats{display:grid; grid-template-columns:repeat(2,1fr); gap:14px;}
-  .feat{
-    display:flex; align-items:center; gap:16px; position:relative; overflow:hidden;
-    background:linear-gradient(155deg,rgba(255,255,255,0.55),rgba(255,255,255,0.38));
-    border-radius:18px; padding:20px 22px;
-    backdrop-filter:blur(28px) saturate(150%); -webkit-backdrop-filter:blur(28px) saturate(150%);
-    border-top:1px solid rgba(255,255,255,0.85); border-left:1px solid rgba(255,255,255,0.7);
-    border-right:1px solid rgba(120,160,200,0.16); border-bottom:1px solid rgba(120,160,200,0.2);
-    box-shadow:0 14px 36px rgba(110,150,190,0.14), inset 0 1px 0 rgba(255,255,255,0.8);
-    transition:transform .3s ease;
-  }
-  .feat:hover{transform:translateY(-3px);}
-  .feat .fic{flex:0 0 44px; width:44px; height:44px; border-radius:13px; background:linear-gradient(145deg,#fff8ec,#ffe4b4); border-top:1px solid rgba(255,255,255,0.9); display:flex; align-items:center; justify-content:center; box-shadow:0 0 14px rgba(245,166,35,0.25), inset 0 1px 2px rgba(255,255,255,0.9);}
-  .feat .fic svg{width:22px; height:22px;}
-  .feat h3{font-size:16px; font-weight:600; color:var(--navy-deep); letter-spacing:-0.3px;}
-
-  /* PRIVACY — one line */
-  .privacy-sec{padding:28px 0 16px;}
-  .privacy-band{
-    text-align:center; max-width:600px; margin:0 auto;
-    background:linear-gradient(155deg,rgba(255,255,255,0.5),rgba(255,255,255,0.34));
-    border-radius:20px; padding:30px 32px;
-    backdrop-filter:blur(28px) saturate(150%); -webkit-backdrop-filter:blur(28px) saturate(150%);
-    border-top:1px solid rgba(255,255,255,0.85); border-left:1px solid rgba(255,255,255,0.68);
-    border-right:1px solid rgba(120,160,200,0.16); border-bottom:1px solid rgba(120,160,200,0.22);
-    box-shadow:0 14px 36px rgba(110,150,190,0.14), inset 0 1px 0 rgba(255,255,255,0.8);
-  }
-  .privacy-band h3{font-weight:600; font-size:19px; color:var(--navy-deep); margin-bottom:6px; letter-spacing:-0.4px;}
-  .privacy-band p{font-size:14.5px; color:var(--muted);}
-  .privacy-band strong{color:var(--gold-deep); font-weight:600;}
-
-  /* FINAL */
-  .final{text-align:center; padding:52px 28px 18px;}
-  .final h2{font-weight:600; font-size:30px; color:var(--navy-deep); letter-spacing:-0.6px; margin-bottom:22px;}
-  .final-sub{font-size:16px; color:var(--muted); line-height:1.6; max-width:420px; margin:-12px auto 24px;}
-  .free-tag{color:var(--gold-deep); font-weight:800;}
-  .store-badge-link{display:inline-flex; align-items:center; gap:8px; font-size:15px; font-weight:600; color:var(--navy-deep); background:rgba(255,255,255,0.6); border:1px solid rgba(255,255,255,0.8); padding:11px 20px; border-radius:999px; text-decoration:none; box-shadow:0 8px 22px rgba(110,150,190,0.16); transition:transform .12s;}
-  .store-badge-link:hover{transform:translateY(-2px);}
-  .free-pill{background:linear-gradient(135deg,#F5A623,#e08c10); color:#fff; font-size:11px; font-weight:800; letter-spacing:0.5px; padding:3px 9px; border-radius:999px;}
-
-  .disclaimer{color:var(--muted); font-size:12px; line-height:1.6; max-width:720px; margin:38px auto 0; text-align:center;}
-  footer{position:relative; z-index:5; text-align:center; padding:42px 28px 54px; color:var(--muted); font-size:13px;}
-  footer a{color:var(--navy); font-weight:500; text-decoration:none; margin:0 10px; transition:color .2s;}
-  footer a:hover{color:var(--gold-deep);}
-
-  @media(max-width:760px){
-    h1{font-size:38px;} .tagline{font-size:16px;}
-    .steps{grid-template-columns:1fr;}
-    .feats{grid-template-columns:1fr;}
-    .sec-title{font-size:26px;}
-    .story{padding:34px 26px;} .story h2{font-size:25px;}
-    header{padding:80px 24px 20px;}
-  }
-  /* WAITLIST */
-  .waitlist{margin:34px auto 0; max-width:420px; background:linear-gradient(155deg,rgba(255,255,255,0.55),rgba(255,255,255,0.35)); border:1px solid rgba(255,255,255,0.7); border-radius:22px; padding:26px 24px; box-shadow:0 12px 32px rgba(110,150,190,0.14);}
-  .waitlist-label{font-size:16px; font-weight:600; color:var(--navy-deep); margin-bottom:14px; letter-spacing:-0.2px;}
-  .waitlist-form{display:flex; gap:9px;}
-  .waitlist-input{flex:1; padding:14px 17px; border-radius:13px; border:1px solid rgba(120,160,200,0.3); background:#fff; font-size:15px; color:var(--navy-deep); outline:none; transition:border .15s;}
-  .waitlist-input:focus{border-color:var(--gold);}
-  .waitlist-input::placeholder{color:#a8c0d6;}
-  .waitlist-btn{background:linear-gradient(135deg,#F5A623,#e08c10); color:#3a2400; font-weight:700; font-size:15px; padding:14px 24px; border-radius:13px; border:none; cursor:pointer; white-space:nowrap; box-shadow:0 8px 20px rgba(224,140,16,0.28); transition:transform .12s;}
-  .waitlist-btn:hover{transform:translateY(-1px);}
-  .waitlist-note{font-size:12.5px; color:var(--muted); margin-top:12px;}
-  @media(max-width:480px){ .waitlist-form{flex-direction:column;} .waitlist-btn{width:100%;} }
-
-  @media(prefers-reduced-motion:reduce){.badge,.si-add svg,.si-check svg,.si-alert,.si-alert svg,.shimmer{animation:none;} .reveal{opacity:1; transform:none; animation:none;}}
+/* ---------- one page-load reveal (respectful) ---------- */
+@keyframes rise{from{opacity:0; transform:translateY(16px);} to{opacity:1; transform:none;}}
+.rise{opacity:0; animation:rise .9s cubic-bezier(.2,.7,.2,1) forwards;}
+.d1{animation-delay:.05s;} .d2{animation-delay:.16s;} .d3{animation-delay:.28s;} .d4{animation-delay:.4s;}
+@media(prefers-reduced-motion:reduce){ .rise{opacity:1; animation:none;} html{scroll-behavior:auto;} }
 </style>
-<script>window.va=window.va||function(){(window.vaq=window.vaq||[]).push(arguments);};</script><script defer src="/_vercel/insights/script.js"></script></head>
+</head>
 <body>
-<div class="sun"></div>
+
+<div class="wrap">
+  <div class="top">
+    <a class="brand" href="/">
+      <img src="tinysafe-icon.png" alt="TinySafe">
+      <span>Tiny<em>Safe</em></span>
+    </a>
+    <nav>
+      <a href="/recalls">Recalls</a>
+      <a href="/state-of-baby-product-safety" class="hide-sm">Report</a>
+      <a href="/recalls/guides" class="hide-sm">Guides</a>
+      <a href="#get">Subscribe</a>
+    </nav>
+  </div>
+</div>
 
 <!-- HERO -->
-<header>
-  <div class="badge">
-    <img src="tinysafe-icon.png" alt="TinySafe" />
+<header class="hero wrap">
+  <p class="kicker rise d1">Baby-product safety, read for you</p>
+  <h1 class="rise d2">I did everything right.<br><span class="miss">I still missed it.</span></h1>
+  <p class="lede rise d3"><b>That's why I built TinySafe.</b> We read every official baby-product recall so you can catch what the reviews never mention &mdash; before it comes home.</p>
+
+  <div class="signup rise d4" id="get">
+    <form action="https://formspree.io/f/xlgyjlnk" method="POST">
+      <input type="email" name="email" placeholder="you@email.com" required aria-label="Email address">
+      <input type="hidden" name="source" value="homepage">
+      <button type="submit">Get the monthly read</button>
+    </form>
+    <p class="fine">One email a month. What we found in the recall record. Nothing else, ever.</p>
   </div>
-  <span class="eyebrow reveal r1">What 50,000 recalls reveal</span>
-  <h1 class="reveal r2">I did everything right.<br><span class="glow shimmer">I still missed it.</span></h1>
-  <p class="hero-sub reveal r3"><strong>That's why I built TinySafe.</strong><br>We read every baby-product recall across six countries and find the pattern — which shapes keep failing, what to check before you buy.</p>
-  <div class="cta reveal r4">
-    <a class="store-badge-link" href="#get">Get the monthly read &rarr;</a>
+
+  <div class="trust rise d4">
+    <div><div class="n">6,300+</div><div class="l">recalls tracked</div></div>
+    <div><div class="n">6</div><div class="l">countries read</div></div>
+    <div><div class="n">Daily</div><div class="l">updated</div></div>
   </div>
 </header>
 
-<div class="wrap">
-
-  <!-- TRUST STATS -->
-  <section class="trust-bar">
-    <div class="trust-item">
-      <span class="trust-num">6,300+</span>
-      <span class="trust-label">recalls tracked</span>
-    </div>
-    <div class="trust-divider"></div>
-    <div class="trust-item">
-      <span class="trust-num">CPSC · FDA · NHTSA</span>
-      <span class="trust-label">official sources</span>
-    </div>
-    <div class="trust-divider"></div>
-    <div class="trust-item">
-      <span class="trust-num">Daily</span>
-      <span class="trust-label">updated</span>
-    </div>
-  </section>
-
-  <!-- VIDEO: app demo in phone mockup (vertical 9:16) -->
-  <section class="video-sec">
-    <div class="video-head">
-      <h2>Find out fast. Act faster.</h2>
-      <p class="alert-line-top">Don't wait to find out. <span class="alert-em">Get alerted as soon as it happens.</span></p>
-    </div>
-    <div class="phone-mock">
-      <div class="phone-frame">
-        <div class="phone-notch"></div>
-        <div class="phone-screen">
-          <!-- Replace this placeholder with your vertical video embed -->
-          <video src="grandma.mp4" autoplay loop muted playsinline poster="grandma-poster.jpg"></video>
-        </div>
-      </div>
-    </div>
-    <p class="video-label">See it in action with Recall Patrol Grandma</p>
-  </section>
-
-  <!-- INSIGHT -->
-  <section class="personal-sec">
-    <div class="video-head">
+<!-- WHY WE'RE DIFFERENT -->
+<section>
+  <div class="wrap">
+    <div class="sec-lead">
       <h2>We don't just list recalls. We find the pattern.</h2>
-      <p>50,000 official records across six countries, read for what keeps going wrong &mdash; so you know what to check before you buy.</p>
+      <p>Fifty thousand official records across six countries, read for what keeps going wrong &mdash; so you know what to look at before you buy.</p>
     </div>
-    <div class="insight-cards" style="display:flex; flex-wrap:wrap; gap:16px; justify-content:center; max-width:720px; margin:8px auto 0; padding:0 24px;">
-      <a href="/state-of-baby-product-safety" style="flex:1 1 300px; text-decoration:none; background:linear-gradient(155deg,rgba(255,255,255,0.55),rgba(255,255,255,0.38)); border-radius:20px; padding:26px 28px; border-top:1px solid rgba(255,255,255,0.85); border-bottom:1px solid rgba(120,160,200,0.2); box-shadow:0 14px 36px rgba(110,150,190,0.14);">
-        <div style="font-size:12px; font-weight:600; letter-spacing:1.4px; text-transform:uppercase; color:var(--muted); margin-bottom:8px;">Annual Report</div>
-        <div style="font-size:19px; font-weight:600; color:var(--navy-deep); line-height:1.3; margin-bottom:6px;">State of Baby Product Safety 2026</div>
-        <div style="font-size:14px; color:var(--navy); line-height:1.5;">What the world's recall record reveals across six jurisdictions. &rarr;</div>
+    <div class="cards">
+      <a class="card big" href="/state-of-baby-product-safety">
+        <span class="tag">Annual report</span>
+        <h3>The State of Baby Product Safety 2026</h3>
+        <p>What the world's recall record reveals across six jurisdictions &mdash; the categories, the hazards, and the numbers behind them.</p>
+        <span class="go">Read the report</span>
       </a>
-      <a href="/shapes-to-avoid" style="flex:1 1 300px; text-decoration:none; background:linear-gradient(155deg,rgba(255,255,255,0.55),rgba(255,255,255,0.38)); border-radius:20px; padding:26px 28px; border-top:1px solid rgba(255,255,255,0.85); border-bottom:1px solid rgba(120,160,200,0.2); box-shadow:0 14px 36px rgba(110,150,190,0.14);">
-        <div style="font-size:12px; font-weight:600; letter-spacing:1.4px; text-transform:uppercase; color:var(--muted); margin-bottom:8px;">The Patterns</div>
-        <div style="font-size:19px; font-weight:600; color:var(--navy-deep); line-height:1.3; margin-bottom:6px;">Shapes to Avoid</div>
-        <div style="font-size:14px; color:var(--navy); line-height:1.5;">Ten product structures the recall record keeps rejecting. &rarr;</div>
+      <a class="card" href="/shapes-to-avoid">
+        <span class="tag">The patterns</span>
+        <h3>Shapes to Avoid</h3>
+        <p>Ten product structures the recall record keeps rejecting &mdash; the designs that fail no matter the brand.</p>
+        <span class="go">See the ten</span>
       </a>
     </div>
-    <div style="text-align:center; margin-top:20px;">
-      <a href="/recalls" style="font-size:15px; font-weight:600; color:var(--navy); text-decoration:none;">Browse all 6,300+ official recalls &rarr;</a>
+    <div class="browse-all">
+      <a href="/recalls">Browse all 6,300+ official recalls</a>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- STORY -->
-  <section class="story-sec">
+<!-- STORY -->
+<section>
+  <div class="wrap">
     <div class="story">
-      <img class="story-photo" src="angela-woojin.jpg" alt="Angela and her son Woojin" />
-      <span class="eyebrow">From one mom to another</span>
-      <h2>So I built the tool<br>I wish I'd had.</h2>
-      <p class="lede">I bought a high chair from a well-known brand, trusting it had to be safe. Months later, it came apart — and I found out it had been recalled. I'd done everything right, and never knew.</p>
-      <details>
-        <summary>Read Angela's story</summary>
-        <div class="more">
-          <p>Before Woojin was born, I researched everything and bought a high chair from a well-known brand — over $400 — trusting that a name like that had to be safe. Months later, I kept finding tiny screws on the floor. He tried to put one in his mouth.</p>
-          <p>Then one day, lifting him out after lunch, the seat came apart from the legs. He almost fell.</p>
-          <p>I searched — and found it had been recalled. <strong>If it can happen to me, it can happen to any parent.</strong> So I built TinySafe — to protect my son, and yours.</p>
-          <p class="sign">— Angela, mom to Woojin</p>
-        </div>
-      </details>
+      <img src="angela-woojin.jpg" alt="Angela and her son Woojin">
+      <p class="q">So I built the tool I wish I'd had.</p>
+      <div class="body">
+        <p>Before Woojin was born, I researched everything and bought a high chair from a well-known brand &mdash; over $400 &mdash; trusting that a name like that had to be safe. Months later, I kept finding tiny screws on the floor. He tried to put one in his mouth.</p>
+        <p>Then one day, lifting him out after lunch, the seat came apart from the legs. He almost fell. I searched, and found it had been recalled.</p>
+        <p>I'd done everything right, and never knew. If it can happen to me, it can happen to any parent.</p>
+      </div>
+      <p class="sign">&mdash; Angela, mom to Woojin</p>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- PRIVACY -->
-  <section class="privacy-sec">
-    <div class="privacy-band">
-      <h3>Your information stays yours</h3>
-      <p>We ask for <strong>nothing but your email</strong>, and we don't sell your data. Ever.</p>
-    </div>
-  </section>
-
-  <!-- FINAL -->
-  <section class="final" id="get">
-    <h2>The recall alerts exist everywhere.<br>The pattern behind them doesn't.</h2>
-    <p class="final-sub">Every recall service tells you a product was recalled. We read 50,000 records across six countries to find what keeps failing &mdash; which shapes to avoid, what to check before you buy. The kind of thing nobody else is looking at.</p>
-    <div class="waitlist">
-      <form class="waitlist-form" action="https://formspree.io/f/xlgyjlnk" method="POST">
-        <input type="email" name="email" placeholder="you@email.com" required class="waitlist-input" />
-        <input type="hidden" name="source" value="homepage" />
-        <button type="submit" class="waitlist-btn">Get the monthly read</button>
+<!-- FINAL CTA -->
+<section class="final">
+  <div class="wrap narrow">
+    <h2>Know before it's in the cart.</h2>
+    <p>Once a month, we send what we found in the recall record &mdash; and it's free.</p>
+    <div class="signup">
+      <form action="https://formspree.io/f/xlgyjlnk" method="POST">
+        <input type="email" name="email" placeholder="you@email.com" required aria-label="Email address">
+        <input type="hidden" name="source" value="homepage-footer">
+        <button type="submit">Get the monthly read</button>
       </form>
-      <p class="waitlist-note">Start with our latest: the shapes the recall record keeps rejecting. One email a month. Nothing else, ever.</p>
+      <p class="fine">Join parents who check first. Unsubscribe anytime.</p>
     </div>
-  </section>
-
-  <p class="disclaimer">TinySafe is an independent app using publicly available FDA and CPSC recall data. It is not affiliated with, endorsed by, or operated by any government agency. Always confirm details with the official source linked in each recall. The absence of a recall does not guarantee a product is safe.</p>
-
-</div>
+  </div>
+</section>
 
 <footer>
-  <div><a href="/state-of-baby-product-safety">State of Baby Product Safety 2026</a> · <a href="/recalls/guides">Safety guides</a> · <a href="privacy.html#privacy">Privacy Policy</a> · <a href="privacy.html#terms">Terms</a> · <a href="support.html">Support</a> · <a href="mailto:tinysafeapp@gmail.com">Contact</a></div>
-  <p style="margin-top:16px;">© 2026 Angela Lee · TinySafe</p>
+  <div class="links">
+    <a href="/recalls">Recalls</a>
+    <a href="/state-of-baby-product-safety">Report</a>
+    <a href="/recalls/guides">Guides</a>
+    <a href="/privacy.html#privacy">Privacy</a>
+    <a href="/support.html">Support</a>
+    <a href="mailto:tinysafeapp@gmail.com">Contact</a>
+  </div>
+  <p class="disclaimer">TinySafe is an independent service that tracks official U.S. baby &amp; kids product recalls from the CPSC and FDA, alongside a wider corpus of international recall records. We report official recalls and link each to its government source. We are not affiliated with any government agency, and we never rank, recommend, or call a product safe. Always verify critical information with the manufacturer or the relevant authority.</p>
+  <p style="margin-top:16px;">&copy; 2026 Angela Lee &middot; TinySafe</p>
 </footer>
+
 </body>
 </html>
