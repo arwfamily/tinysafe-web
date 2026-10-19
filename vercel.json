@@ -1,1 +1,36 @@
-{"cleanUrls": true, "trailingSlash": false}
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/report",
+      "destination": "/state-of-baby-product-safety",
+      "permanent": true
+    },
+    {
+      "source": "/report.html",
+      "destination": "/state-of-baby-product-safety",
+      "permanent": true
+    },
+    {
+      "source": "/check",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/check/:path*",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/recalls/recent-baby-recalls",
+      "destination": "/recalls",
+      "permanent": true
+    },
+    {
+      "source": "/recalls_backup/:path*",
+      "destination": "/recalls/:path*",
+      "permanent": true
+    }
+  ]
+}

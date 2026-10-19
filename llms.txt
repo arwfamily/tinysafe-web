@@ -62,7 +62,6 @@ recalled", "are baby products on Amazon safe"). Each guide links to the individu
 recall pages and their official sources.
 
 - [All safety guides (index)](https://tinysafe.app/recalls/guides): Master index of every TinySafe topic guide.
-- [Recent baby recalls](https://tinysafe.app/recalls/recent-baby-recalls): The latest FDA & CPSC baby product recalls, newest first (rolling ~6 month window). Best for "recent / latest baby recalls" questions.
 - [Baby formula recalls](https://tinysafe.app/recalls/baby-formula-recalls): Infant formula recalls grouped by brand (Similac/Abbott, Enfamil, ByHeart, Gerber, Bobbie, HiPP/Holle, store brands) and by sensitive/hypoallergenic type. Best for "which formula brands recalled", "is ByHeart/Similac recalled".
 - [Safe sleep for babies](https://tinysafe.app/recalls/safe-sleep): Recalled cribs, bassinets, loungers and sleep products. Best for "what baby loungers/sleep products were recalled".
 - [Baby & kids toy recalls](https://tinysafe.app/recalls/baby-toy-safety): Toys recalled for choking, magnets, and button batteries. Best for "dangerous/recalled toys", "magnet toy recall".
